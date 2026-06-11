@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+    <link rel="manifest" href="manifest.json">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>eBhulekh Services</title>
@@ -172,8 +173,8 @@ border-top-right-radius:35px;
 
 
 <section class="hero">
-<h2>6½ हाथ लग्गा भूमि कैलकुलेटर</h2>
-<h2> (Mithila & Tirhut Region)</h2>
+<h2>भूमि कैलकुलेटर (6½ हाथ लग्गा से)</h2>
+<h2> (6½ हाथ लग्गा मिथिला और तिरहुत क्षेत्र में मुख्य प्रयोग किया जाता है।)</h2>
 <p>बीघा, कट्ठा, धुर, डिसमिल, एकड़, हेक्टेयर </p>
 </section>
 
@@ -339,6 +340,11 @@ document.getElementById("hectare").innerText=hectare.toFixed(4);
 }
 
 </script>
-
+<script>
+if ("serviceWorker" in navigator) {
+ navigator.serviceWorker.register("service-worker.js")
+ .then(() => console.log("Service Worker Registered"));
+}
+</script>
 </body>
 </html>

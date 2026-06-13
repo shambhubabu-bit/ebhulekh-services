@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Unit Converter</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fa;
+    padding:20px;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+h2{
+    text-align:center;
+    color:#0f766e;
+}
+
+input,select,button{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+}
+
+.convert-btn{
+    background:#0f766e;
+    color:white;
+}
+
+.convert-btn:hover{
+    background:#115e59;
+}
+
+.swap-btn{
+    background:#f59e0b;
+    color:white;
+    font-weight:bold;
+}
+
+.swap-btn:hover{
+    background:#d97706;
+}
+
+.result{
+    margin-top:20px;
+    padding:15px;
+    background:#ecfdf5;
+    border:2px solid #10b981;
+    border-radius:10px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:#065f46;
+}
+.notice-box{
+    background:#fff8e1;
+    border-left:6px solid #f59e0b;
+    padding:15px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+.notice-box h3{
+    color:#d97706;
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.notice-box ul{
+    margin-left:20px;
+}
+
+.notice-box li{
+    margin:8px 0;
+    line-height:1.6;
+    color:#444;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <button onclick="window.location.href='index.html'">
+🏠 Home Page
+</button>
+
+<h2>🔄 Dynamic Unit Converter</h2>
+<div class="notice-box">
+
+<h3>📢 इस टूल से आप क्या कर सकते हैं?</h3>
+
+<ul>
+<li>✅ धुर को कट्ठा, बीघा और डिसमिल में बदल सकते हैं।</li>
+
+<li>✅ कट्ठा को धुर, बीघा और डिसमिल में बदल सकते हैं।</li>
+
+<li>✅ बीघा को धुर, कट्ठा और डिसमिल में बदल सकते हैं।</li>
+
+<li>✅ डिसमिल को धुर, कट्ठा और बीघा में बदल सकते हैं।</li>
+
+<li>✅ Swap बटन से दोनों यूनिट को तुरंत बदल सकते हैं।</li>
+
+<li>✅ यह कन्वर्टर बिहार में प्रचलित मानक (1 बीघा = 20 कट्ठा = 400 धुर) के आधार पर कार्य करता है।</li>
+<li>✅ 4 हाथ से 9 हाथ तक विभिन्न लग्गा के अनुसार कन्वर्ज़न कर सकते हैं।</li>
+</ul>
+<p style="margin-top:10px;color:#b91c1c;font-size:14px;">
+⚠️ नोट: विभिन्न क्षेत्रों में भूमि माप की प्रचलित इकाइयाँ अलग-अलग हो सकती हैं। कृपया स्थानीय मानकों की पुष्टि अवश्य करें।
+</p>
+</div>
+<label>लग्गा चुनें</label>
+
+<select id="lagga">
+    <option value="4">4 हाथ</option>
+    <option value="4.5">4½ हाथ</option>
+    <option value="5">5 हाथ</option>
+    <option value="5.5">5½ हाथ</option>
+    <option value="6">6 हाथ</option>
+    <option value="6.5" selected>6½ हाथ</option>
+    <option value="7">7 हाथ</option>
+    <option value="7.5">7½ हाथ</option>
+    <option value="8">8 हाथ</option>
+    <option value="8.5">8½ हाथ</option>
+    <option value="9">9 हाथ</option>
+</select>
+<input type="number" id="inputValue" placeholder="Value">
+
+<select id="fromUnit">
+    <option value="dhur">धुर</option>
+    <option value="katha">कट्ठा</option>
+    <option value="bigha">बीघा</option>
+    <option value="dismil">डिसमिल</option>
+</select>
+
+<button class="swap-btn" onclick="swapUnits()">
+🔄 Swap
+</button>
+
+<select id="toUnit">
+    <option value="dhur">धुर</option>
+    <option value="katha">कट्ठा</option>
+    <option value="bigha">बीघा</option>
+    <option value="dismil">डिसमिल</option>
+</select>
+
+<button class="convert-btn" onclick="convertLand()">
+📐 Convert
+</button>
+
+<div class="result" id="convertResult">
+परिणाम यहाँ दिखाई देगा
+</div>
+
+</div>
+
+<script>
+
+// 1 डिसमिल = कितने धुर (लग्गा के अनुसार)
+const laggaFactor = {
+
+    "4":   { dhur:1, katha:20, bigha:400, dismil:6.40 },
+
+    "4.5": { dhur:1, katha:20, bigha:400, dismil:6.25 },
+
+    "5":   { dhur:1, katha:20, bigha:400, dismil:6.17 },
+
+    "5.5": { dhur:1, katha:20, bigha:400, dismil:6.25 },
+
+    "6":   { dhur:1, katha:20, bigha:400, dismil:6.94 },
+
+    "6.5": { dhur:1, katha:20, bigha:400, dismil:6.58 },
+
+    "7":   { dhur:1, katha:20, bigha:400, dismil:6.25 },
+
+    "7.5": { dhur:1, katha:20, bigha:400, dismil:5.56 },
+
+    "8":   { dhur:1, katha:20, bigha:400, dismil:6.25 },
+
+    "8.5": { dhur:1, katha:20, bigha:400, dismil:6.23 },
+
+    "9":   { dhur:1, katha:20, bigha:400, dismil:6.50 }
+
+};
+
+
+// Convert Function
+function convertLand(){
+
+    let value = parseFloat(
+        document.getElementById("inputValue").value
+    );
+
+    if(isNaN(value)){
+        alert("कृपया मान दर्ज करें");
+        return;
+    }
+
+    let from = document.getElementById("fromUnit").value;
+
+    let to = document.getElementById("toUnit").value;
+
+    let lagga = document.getElementById("lagga").value;
+
+    const factor = laggaFactor[lagga];
+
+    // पहले धुर में बदलें
+    let dhurValue = value * factor[from];
+
+    // फिर लक्ष्य यूनिट में बदलें
+    let result = dhurValue / factor[to];
+
+    document.getElementById("convertResult").innerHTML = `
+
+        <div style="
+            background:#ecfdf5;
+            border:2px solid #10b981;
+            padding:15px;
+            border-radius:10px;
+            line-height:1.8;
+        ">
+
+        <b>🏡 ${lagga} हाथ लग्गा</b>
+
+        <br><br>
+
+        ${value} ${from}
+
+        <br>⬇️
+
+        <br>
+
+        <b>${result.toFixed(4)} ${to}</b>
+
+        </div>
+
+    `;
+}
+
+
+// Swap Function
+function swapUnits(){
+
+    let from =
+    document.getElementById("fromUnit");
+
+    let to =
+    document.getElementById("toUnit");
+
+    let temp = from.value;
+
+    from.value = to.value;
+
+    to.value = temp;
+
+    // अगर Value भरी हुई है तो Auto Convert
+    if(
+        document.getElementById("inputValue").value !== ""
+    ){
+        convertLand();
+    }
+
+}
+
+
+// Enter दबाने पर Convert
+document.getElementById("inputValue")
+.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        convertLand();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

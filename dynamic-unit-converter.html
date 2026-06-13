@@ -3,296 +3,503 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynamic Unit Converter</title>
+<title>Bhu Land Premium Converter</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fa;
-    padding:20px;
+background:#f3f7ff;
+padding:12px;
+transition:.3s;
 }
 
 .container{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
+max-width:900px;
+margin:auto;
+background:#fff;
+padding:20px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
-h2{
-    text-align:center;
-    color:#0f766e;
+/* Header */
+
+.header{
+text-align:center;
+margin-bottom:20px;
 }
 
-input,select,button{
-    width:100%;
-    padding:12px;
-    margin-top:12px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-size:16px;
+.header h1{
+color:#2563eb;
+font-size:30px;
+margin-bottom:5px;
 }
 
-button{
-    cursor:pointer;
-    border:none;
+.header p{
+color:#6b7280;
+font-size:15px;
 }
 
-.convert-btn{
-    background:#0f766e;
-    color:white;
+/* Top Buttons */
+
+.top-buttons{
+display:flex;
+gap:10px;
+margin-bottom:20px;
 }
 
-.convert-btn:hover{
-    background:#115e59;
+.top-buttons button{
+flex:1;
+padding:13px;
+border:none;
+border-radius:10px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
 }
 
-.swap-btn{
-    background:#f59e0b;
-    color:white;
-    font-weight:bold;
+.top-buttons button:hover{
+transform:translateY(-2px);
 }
 
-.swap-btn:hover{
-    background:#d97706;
+.home-btn{
+background:#2563eb;
+color:#fff;
 }
 
-.result{
-    margin-top:20px;
-    padding:15px;
-    background:#ecfdf5;
-    border:2px solid #10b981;
-    border-radius:10px;
-    text-align:center;
-    font-size:20px;
-    font-weight:bold;
-    color:#065f46;
+.dark-btn{
+background:#111827;
+color:#fff;
 }
+
+/* Notice Box */
+
 .notice-box{
-    background:#fff8e1;
-    border-left:6px solid #f59e0b;
-    padding:15px;
-    border-radius:10px;
-    margin:20px 0;
+background:linear-gradient(135deg,#eff6ff,#ffffff);
+border:1px solid #bfdbfe;
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 4px 12px rgba(37,99,235,.1);
 }
 
 .notice-box h3{
-    color:#d97706;
-    margin-bottom:10px;
-    font-size:18px;
+color:#1d4ed8;
+margin-bottom:15px;
+font-size:20px;
 }
 
 .notice-box ul{
-    margin-left:20px;
+list-style:none;
+padding:0;
 }
 
 .notice-box li{
-    margin:8px 0;
-    line-height:1.6;
-    color:#444;
+padding:10px 0;
+border-bottom:1px solid #e5e7eb;
+font-size:15px;
+line-height:1.7;
+color:#374151;
 }
+
+.notice-box li:last-child{
+border-bottom:none;
+}
+
+.notice-note{
+margin-top:15px;
+padding:12px;
+background:#fef2f2;
+border-radius:10px;
+color:#b91c1c;
+font-size:14px;
+}
+
+/* Form */
+
+label{
+display:block;
+font-weight:600;
+margin-top:15px;
+color:#374151;
+}
+
+select,
+input{
+width:100%;
+padding:13px;
+margin-top:8px;
+border:1px solid #d1d5db;
+border-radius:10px;
+font-size:16px;
+}
+
+/* Dark Mode */
+
+.dark-mode{
+background:#111827;
+}
+
+.dark-mode .container{
+background:#1f2937;
+color:#fff;
+}
+
+.dark-mode .notice-box{
+background:#374151;
+border-color:#4b5563;
+}
+
+.dark-mode .notice-box li{
+color:#f3f4f6;
+}
+
+.dark-mode select,
+.dark-mode input{
+background:#374151;
+color:white;
+border-color:#4b5563;
+}
+
+.dark-mode label{
+color:white;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.container{
+padding:15px;
+}
+
+.header h1{
+font-size:24px;
+}
+
+.top-buttons{
+flex-direction:column;
+}
+
+.notice-box li{
+font-size:14px;
+}
+
+}
+.swap-btn{
+width:100%;
+margin-top:15px;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#f59e0b;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.swap-btn:hover{
+background:#d97706;
+}
+
+.convert-btn{
+width:100%;
+margin-top:15px;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#059669;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.convert-btn:hover{
+background:#047857;
+}
+
+.result-card{
+margin-top:20px;
+padding:20px;
+background:#f9fafb;
+border-radius:15px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.result-placeholder{
+color:#6b7280;
+font-size:16px;
+}
+
+.result-badge{
+display:inline-block;
+padding:8px 15px;
+background:#dbeafe;
+color:#1d4ed8;
+border-radius:20px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.result-value{
+font-size:18px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.result-arrow{
+font-size:28px;
+margin:10px 0;
+}
+
+.result-answer{
+font-size:30px;
+font-weight:bold;
+color:#059669;
+}
+
+.dark-mode .result-card{
+background:#374151;
+}
+
+.dark-mode .result-placeholder{
+color:#f3f4f6;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="container">
-    <button onclick="window.location.href='index.html'">
+
+<div class="header">
+
+<h1>🏡 Bhu Land Premium Converter Tool</h1>
+
+<p>
+धुर • कट्ठा • बीघा • डिसमिल कन्वर्ज़न टूल
+</p>
+
+</div>
+
+<div class="top-buttons">
+
+<button class="home-btn"
+onclick="window.location.href='index.html'">
+
 🏠 Home Page
+
 </button>
 
-<h2>🔄 Dynamic Unit Converter</h2>
+<button class="dark-btn"
+onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</button>
+
+</div>
+
 <div class="notice-box">
 
 <h3>📢 इस टूल से आप क्या कर सकते हैं?</h3>
 
 <ul>
-<li>✅ धुर को कट्ठा, बीघा और डिसमिल में बदल सकते हैं।</li>
 
-<li>✅ कट्ठा को धुर, बीघा और डिसमिल में बदल सकते हैं।</li>
+<li>✅ धुर ↔ कट्ठा ↔ बीघा ↔ डिसमिल कन्वर्ज़न कर सकते हैं।</li>
 
-<li>✅ बीघा को धुर, कट्ठा और डिसमिल में बदल सकते हैं।</li>
+<li>✅ 4 हाथ से 9 हाथ तक सभी लग्गा का उपयोग कर सकते हैं।</li>
 
-<li>✅ डिसमिल को धुर, कट्ठा और बीघा में बदल सकते हैं।</li>
+<li>✅ Swap Button द्वारा तुरंत यूनिट बदल सकते हैं।</li>
 
-<li>✅ Swap बटन से दोनों यूनिट को तुरंत बदल सकते हैं।</li>
+<li>✅ Auto Conversion सुविधा उपलब्ध है।</li>
 
-<li>✅ यह कन्वर्टर बिहार में प्रचलित मानक (1 बीघा = 20 कट्ठा = 400 धुर) के आधार पर कार्य करता है।</li>
-<li>✅ 4 हाथ से 9 हाथ तक विभिन्न लग्गा के अनुसार कन्वर्ज़न कर सकते हैं।</li>
+<li>✅ मोबाइल एवं डेस्कटॉप दोनों के लिए अनुकूल डिज़ाइन।</li>
+
+<li>✅ बिहार भूमि मापन मानक आधारित गणना।</li>
+
 </ul>
-<p style="margin-top:10px;color:#b91c1c;font-size:14px;">
+
+<div class="notice-note">
+
 ⚠️ नोट: विभिन्न क्षेत्रों में भूमि माप की प्रचलित इकाइयाँ अलग-अलग हो सकती हैं। कृपया स्थानीय मानकों की पुष्टि अवश्य करें।
-</p>
+
 </div>
+
+</div>
+<!-- Dynamic Converter Form -->
+
 <label>लग्गा चुनें</label>
 
 <select id="lagga">
-    <option value="4">4 हाथ</option>
-    <option value="4.5">4½ हाथ</option>
-    <option value="5">5 हाथ</option>
-    <option value="5.5">5½ हाथ</option>
-    <option value="6">6 हाथ</option>
-    <option value="6.5" selected>6½ हाथ</option>
-    <option value="7">7 हाथ</option>
-    <option value="7.5">7½ हाथ</option>
-    <option value="8">8 हाथ</option>
-    <option value="8.5">8½ हाथ</option>
-    <option value="9">9 हाथ</option>
+<option value="4">4 हाथ</option>
+<option value="4.5">4½ हाथ</option>
+<option value="5">5 हाथ</option>
+<option value="5.5">5½ हाथ</option>
+<option value="6">6 हाथ</option>
+<option value="6.5" selected>6½ हाथ</option>
+<option value="7">7 हाथ</option>
+<option value="7.5">7½ हाथ</option>
+<option value="8">8 हाथ</option>
+<option value="8.5">8½ हाथ</option>
+<option value="9">9 हाथ</option>
 </select>
-<input type="number" id="inputValue" placeholder="Value">
+
+<label>मान दर्ज करें</label>
+
+<input
+type="number"
+id="inputValue"
+placeholder="उदाहरण: 10"
+/>
+
+<label>किस यूनिट से</label>
 
 <select id="fromUnit">
-    <option value="dhur">धुर</option>
-    <option value="katha">कट्ठा</option>
-    <option value="bigha">बीघा</option>
-    <option value="dismil">डिसमिल</option>
+<option value="dhur">धुर</option>
+<option value="katha">कट्ठा</option>
+<option value="bigha">बीघा</option>
+<option value="dismil">डिसमिल</option>
 </select>
 
 <button class="swap-btn" onclick="swapUnits()">
-🔄 Swap
+🔄 Swap Units
 </button>
 
+<label>किस यूनिट में</label>
+
 <select id="toUnit">
-    <option value="dhur">धुर</option>
-    <option value="katha">कट्ठा</option>
-    <option value="bigha">बीघा</option>
-    <option value="dismil">डिसमिल</option>
+<option value="dhur">धुर</option>
+<option value="katha">कट्ठा</option>
+<option value="bigha">बीघा</option>
+<option value="dismil">डिसमिल</option>
 </select>
 
 <button class="convert-btn" onclick="convertLand()">
-📐 Convert
+📐 Convert Now
 </button>
 
-<div class="result" id="convertResult">
+<div class="result-card" id="convertResult">
+
+<div class="result-placeholder">
 परिणाम यहाँ दिखाई देगा
 </div>
 
 </div>
 
 <script>
+    const laggaFactor={
 
-// 1 डिसमिल = कितने धुर (लग्गा के अनुसार)
-const laggaFactor = {
-
-    "4":   { dhur:1, katha:20, bigha:400, dismil:6.40 },
-
-    "4.5": { dhur:1, katha:20, bigha:400, dismil:6.25 },
-
-    "5":   { dhur:1, katha:20, bigha:400, dismil:6.17 },
-
-    "5.5": { dhur:1, katha:20, bigha:400, dismil:6.25 },
-
-    "6":   { dhur:1, katha:20, bigha:400, dismil:6.94 },
-
-    "6.5": { dhur:1, katha:20, bigha:400, dismil:6.58 },
-
-    "7":   { dhur:1, katha:20, bigha:400, dismil:6.25 },
-
-    "7.5": { dhur:1, katha:20, bigha:400, dismil:5.56 },
-
-    "8":   { dhur:1, katha:20, bigha:400, dismil:6.25 },
-
-    "8.5": { dhur:1, katha:20, bigha:400, dismil:6.23 },
-
-    "9":   { dhur:1, katha:20, bigha:400, dismil:6.50 }
+"4":{dhur:1,katha:20,bigha:400,dismil:6.40},
+"4.5":{dhur:1,katha:20,bigha:400,dismil:6.25},
+"5":{dhur:1,katha:20,bigha:400,dismil:6.17},
+"5.5":{dhur:1,katha:20,bigha:400,dismil:6.25},
+"6":{dhur:1,katha:20,bigha:400,dismil:6.94},
+"6.5":{dhur:1,katha:20,bigha:400,dismil:6.58},
+"7":{dhur:1,katha:20,bigha:400,dismil:6.25},
+"7.5":{dhur:1,katha:20,bigha:400,dismil:5.56},
+"8":{dhur:1,katha:20,bigha:400,dismil:6.25},
+"8.5":{dhur:1,katha:20,bigha:400,dismil:6.23},
+"9":{dhur:1,katha:20,bigha:400,dismil:6.50}
 
 };
 
+const unitNames={
+dhur:"धुर",
+katha:"कट्ठा",
+bigha:"बीघा",
+dismil:"डिसमिल"
+};
 
-// Convert Function
 function convertLand(){
 
-    let value = parseFloat(
-        document.getElementById("inputValue").value
-    );
+let value=parseFloat(
+document.getElementById("inputValue").value
+);
 
-    if(isNaN(value)){
-        alert("कृपया मान दर्ज करें");
-        return;
-    }
-
-    let from = document.getElementById("fromUnit").value;
-
-    let to = document.getElementById("toUnit").value;
-
-    let lagga = document.getElementById("lagga").value;
-
-    const factor = laggaFactor[lagga];
-
-    // पहले धुर में बदलें
-    let dhurValue = value * factor[from];
-
-    // फिर लक्ष्य यूनिट में बदलें
-    let result = dhurValue / factor[to];
-
-    document.getElementById("convertResult").innerHTML = `
-
-        <div style="
-            background:#ecfdf5;
-            border:2px solid #10b981;
-            padding:15px;
-            border-radius:10px;
-            line-height:1.8;
-        ">
-
-        <b>🏡 ${lagga} हाथ लग्गा</b>
-
-        <br><br>
-
-        ${value} ${from}
-
-        <br>⬇️
-
-        <br>
-
-        <b>${result.toFixed(4)} ${to}</b>
-
-        </div>
-
-    `;
+if(isNaN(value)){
+alert("कृपया मान दर्ज करें");
+return;
 }
 
+let lagga=document.getElementById("lagga").value;
+let from=document.getElementById("fromUnit").value;
+let to=document.getElementById("toUnit").value;
 
-// Swap Function
+const factor=laggaFactor[lagga];
+
+let dhurValue=value*factor[from];
+
+let result=dhurValue/factor[to];
+
+document.getElementById("convertResult").innerHTML=`
+
+<div class="result-badge">
+🏡 ${lagga} हाथ लग्गा
+</div>
+
+<div class="result-value">
+${value} ${unitNames[from]}
+</div>
+
+<div class="result-arrow">
+⬇️
+</div>
+
+<div class="result-answer">
+${result.toFixed(4)} ${unitNames[to]}
+</div>
+
+`;
+
+}
+
 function swapUnits(){
 
-    let from =
-    document.getElementById("fromUnit");
+let from=document.getElementById("fromUnit");
 
-    let to =
-    document.getElementById("toUnit");
+let to=document.getElementById("toUnit");
 
-    let temp = from.value;
+let temp=from.value;
 
-    from.value = to.value;
+from.value=to.value;
 
-    to.value = temp;
+to.value=temp;
 
-    // अगर Value भरी हुई है तो Auto Convert
-    if(
-        document.getElementById("inputValue").value !== ""
-    ){
-        convertLand();
-    }
+if(
+document.getElementById("inputValue").value!==""
+){
+convertLand();
+}
 
 }
 
+document
+.getElementById("inputValue")
+.addEventListener("input",function(){
 
-// Enter दबाने पर Convert
-document.getElementById("inputValue")
-.addEventListener("keypress", function(e){
-
-    if(e.key === "Enter"){
-
-        convertLand();
-
-    }
+if(this.value!==""){
+convertLand();
+}
 
 });
 
-</script>
+function toggleDarkMode(){
 
-</body>
-</html>
+document.body.classList.toggle("dark-mode");
+
+}
+
+</script>

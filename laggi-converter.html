@@ -10,14 +10,15 @@ body{
 font-family:Arial,sans-serif;
 background:#f5f7fa;
 margin:0;
-padding:20px;
+padding:10px;
 }
 
 .container{
+width:95%;
 max-width:900px;
-margin:auto;
+margin:15px auto;
 background:white;
-padding:25px;
+padding:15px;
 border-radius:12px;
 box-shadow:0 0 15px rgba(0,0,0,.1);
 }
@@ -36,9 +37,15 @@ border:1px solid #ccc;
 }
 
 button{
+width:100%;
+padding:14px;
+margin-top:10px;
+font-size:16px;
+font-weight:bold;
 background:#2563eb;
 color:white;
 border:none;
+border-radius:10px;
 cursor:pointer;
 }
 
@@ -53,11 +60,6 @@ background:#eff6ff;
 border-radius:10px;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
-}
 
 table,th,td{
 border:1px solid #ddd;
@@ -72,41 +74,84 @@ th{
 background:#2563eb;
 color:white;
 }
+button{
+width:100%;
+padding:14px;
+margin-top:10px;
+font-size:16px;
+font-weight:bold;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+.table-wrapper{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+min-width:500px;
+}
+@media(max-width:768px){
+
+h1{
+font-size:24px;
+}
+
+th,td{
+padding:8px;
+font-size:14px;
+}
+
+button,
+select{
+font-size:15px;
+padding:12px;
+}
+
 .container{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
+padding:12px;
+}
+
+}
+.home-btn{
+background:#16a34a;
+}
+
+.home-btn:hover{
+background:#15803d;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-    <button onclick="window.location.href='index.html'">
+<button class="home-btn"
+onclick="window.location.href='index.html'">
 🏠 Home Page
 </button>
 
 
 <div class="container">
 
-<h1>🏡 Laggi Converter Tool</h1>
+<h1>🏡 Laggi Converter Premium Tool</h1>
 
 <label>लग्गी चुनें</label>
 
 <select id="laggi">
 <option value="4">4 हाथ</option>
-<option value="4.5">4.5 हाथ</option>
+<option value="4.5">4½ हाथ</option>
 <option value="5">5 हाथ</option>
-<option value="5.5" selected>5.5 हाथ</option>
+<option value="5.5" selected>5½ हाथ</option>
 <option value="6">6 हाथ</option>
-<option value="6.5">6.5 हाथ</option>
+<option value="6.5">6½ हाथ</option>
 <option value="7">7 हाथ</option>
-<option value="7.5">7.5 हाथ</option>
+<option value="7.5">7½ हाथ</option>
 <option value="8">8 हाथ</option>
-<option value="8.5">8.5 हाथ</option>
+<option value="8.5">8½ हाथ</option>
 <option value="9">9 हाथ</option>
 </select>
 
@@ -207,47 +252,42 @@ document.getElementById("laggi").value;
 let d = data[laggi];
 
 document.getElementById("result").innerHTML = `
-
 <h3>${laggi} हाथ लग्गी</h3>
 
-<table>
-
-<tr>
-<th>Unit</th>
-<th>Sq Ft</th>
-<th>Sq Yard</th>
-<th>Sq Meter</th>
-</tr>
-
-<tr>
-<td>1 धुर</td>
-<td>${d.dhur[0]}</td>
-<td>${d.dhur[1]}</td>
-<td>${d.dhur[2]}</td>
-</tr>
-
-<tr>
-<td>1 कट्ठा</td>
-<td>${d.katha[0]}</td>
-<td>${d.katha[1]}</td>
-<td>${d.katha[2]}</td>
-</tr>
-
-<tr>
-<td>1 बीघा</td>
-<td>${d.bigha[0]}</td>
-<td>${d.bigha[1]}</td>
-<td>${d.bigha[2]}</td>
-</tr>
-
-<tr>
-<td>1 डिसमिल</td>
-<td>${d.dismil[0]}</td>
-<td>${d.dismil[1]}</td>
-<td>${d.dismil[2]}</td>
-</tr>
-
-</table>
+<div class="table-wrapper">
+<table> 
+    <tr> 
+        <th>Unit</th>
+         <th>Sq Ft</th> 
+         <th>Sq Yard</th> 
+         <th>Sq Meter</th> 
+         </tr> 
+         <tr> 
+            <td>1 धुर</td>
+             <td>${d.dhur[0]}</td>
+              <td>${d.dhur[1]}</td>
+               <td>${d.dhur[2]}</td>
+                </tr> 
+                <tr> 
+                    <td>1 कट्ठा</td> 
+                    <td>${d.katha[0]}</td> 
+                    <td>${d.katha[1]}</td> 
+                    <td>${d.katha[2]}</td>
+                     </tr> 
+                     <tr>
+                         <td>1 बीघा</td>
+                          <td>${d.bigha[0]}</td> 
+                          <td>${d.bigha[1]}</td> 
+                          <td>${d.bigha[2]}</td> 
+                        </tr>
+                           <tr>
+                             <td>1 डिसमिल</td>
+                              <td>${d.dismil[0]}</td> 
+                              <td>${d.dismil[1]}</td> 
+                              <td>${d.dismil[2]}</td> 
+                            </tr> 
+    </table> ;
+</div>
 `;
 
 }

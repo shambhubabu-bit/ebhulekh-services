@@ -124,6 +124,7 @@ font-size:30px;
 .hero p{
 color:#4b5563;
 font-size:16px;
+text-align:center;
 }
 
 /* Main Container */
@@ -325,11 +326,12 @@ Digital Land Measurement & Conversion Solutions
 
 </div>
 
+
 </header>
 
 <section class="hero">
 
-<h2>भूमि कैलकुलेटर (सभी लग्गा)</h2>
+<h2>भूमि कैलकुलेटर ( सभी लग्गा )</h2>
 
 <p>
 बीघा, कट्ठा, धुर, डिसमिल, एकड़, हेक्टेयर आदि की गणना करें।
@@ -564,6 +566,7 @@ class="result-card">
 
 </div>
 
+
 <!-- Laggi Converter Card -->
 
 <div class="card tool-card" id="laggiCard">
@@ -625,6 +628,48 @@ onclick="window.location.href='laggi-converter.html'">
 onclick="window.location.href='dynamic-unit-converter.html'">
 
 📐 Dynamic Converter खोलें
+
+</button>
+
+</div>
+</div>
+<div>
+
+
+<button class="btn info-btn"
+onclick="window.location.href='https://dlrs.bihar.gov.in/surveystatusdistrict.aspx'">
+
+📖 अपने गांव में सर्वेक्षण की स्थिति देखें|
+
+</button>
+
+</div>
+
+<div>
+
+<button class="btn info-btn"
+onclick="window.location.href='https://emutation.bihar.gov.in/biharBhumireport/ViewJamabandi'">
+
+📖 जमाबंदी पंजी देखें
+
+</button>
+
+</div>
+<div>
+
+<button class="btn info-btn"
+onclick="window.location.href='Revenue-Glossary.pdf'">
+
+📚 भूमि शब्दावली एवं समाधान जानकारी देखें
+
+</button>
+
+</div>
+<div>
+<button class="btn info-btn"
+onclick="window.location.href='https://dlrs.bihar.gov.in/'">
+
+📖 बिहार सर्वेक्षण पोर्टल
 
 </button>
 
@@ -895,6 +940,14 @@ margin-top:8px;
 }
 
 }
+.info-btn{
+background:linear-gradient(135deg,#ea580c,#c2410c);
+color:white;
+}
+
+.info-btn:hover{
+transform:translateY(-2px);
+}
 
 </style>
 <script>
@@ -1152,6 +1205,24 @@ function toggleToolInfo(id){
         .classList.toggle("active");
 
     }
+
+}
+function searchGlossary(){
+
+let input=document.getElementById("searchTerm")
+.value.toLowerCase();
+
+let cards=document.querySelectorAll(".glossary-item");
+
+cards.forEach(item=>{
+
+if(item.innerText.toLowerCase().includes(input)){
+item.style.display="block";
+}else{
+item.style.display="none";
+}
+
+});
 
 }
 

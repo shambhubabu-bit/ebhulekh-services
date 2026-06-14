@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>eBhulekh Services | Bihar Land Tools</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eef5ff,#dbeafe);
+color:#1f2937;
+overflow-x:hidden;
+}
+
+/* Floating WhatsApp */
+
+.whatsapp-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+z-index:999;
+}
+
+.whatsapp-btn i{
+font-size:32px;
+color:white;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(135deg,#1e40af,#2563eb);
+padding:40px 20px;
+text-align:center;
+color:white;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.header-logo{
+width:95px;
+height:95px;
+margin:auto;
+background:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:42px;
+margin-bottom:15px;
+}
+
+header h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.header-subtitle{
+font-size:17px;
+opacity:.95;
+}
+
+.header-badge{
+display:inline-block;
+margin-top:18px;
+padding:10px 20px;
+background:rgba(255,255,255,.18);
+border-radius:30px;
+font-size:14px;
+}
+
+/* Install Button */
+
+.install-btn{
+margin-top:18px;
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#2563eb;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.install-btn:hover{
+transform:translateY(-2px);
+}
+
+/* Hero */
+
+.hero{
+padding:35px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:32px;
+color:#1e40af;
+margin-bottom:12px;
+}
+
+.hero p{
+font-size:17px;
+color:#4b5563;
+line-height:1.7;
+max-width:700px;
+margin:auto;
+}
+
+/* Container */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+/* Card */
+
+.card{
+background:white;
+padding:25px;
+border-radius:22px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+margin-bottom:25px;
+}
+
+/* Featured Tool */
+
+.featured-card{
+background:linear-gradient(135deg,#fff7ed,#ffedd5);
+border:3px solid #fb923c;
+text-align:center;
+}
+
+.featured-badge{
+display:inline-block;
+padding:8px 18px;
+background:#f97316;
+color:white;
+border-radius:25px;
+font-size:14px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.featured-card h2{
+color:#c2410c;
+margin-bottom:15px;
+font-size:30px;
+}
+
+.featured-card p{
+color:#7c2d12;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+/* Buttons */
+
+.btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.open-btn{
+background:linear-gradient(135deg,#059669,#047857);
+color:white;
+}
+
+.open-btn:hover{
+transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:28px;
+}
+
+.hero h2{
+font-size:25px;
+}
+
+.featured-card h2{
+font-size:24px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="https://wa.me/917367910169"
+target="_blank"
+class="whatsapp-btn">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<header>
+
+<div class="header-logo">
+🏡
+</div>
+
+<h1>eBhulekh Services</h1>
+
+<p class="header-subtitle">
+
+बिहार भूमि माप एवं कन्वर्जन सेवाएँ
+
+</p>
+
+<div class="header-badge">
+
+🛡 Secure • Trusted • Bihar Based
+
+</div>
+
+<br>
+
+<button id="installBtn"
+class="install-btn"
+style="display:none;">
+
+📲 Install eBhulekh App
+
+</button>
+
+</header>
+
+<section class="hero">
+
+<h2>
+
+Bihar Premium Land Tools Dashboard
+
+</h2>
+
+<p>
+
+बिहार के सभी लग्गा आधारित भूमि कैलकुलेटर,
+अमीन कैलकुलेटर, लंबाई कन्वर्टर तथा अन्य
+भूमि संबंधी सेवाएँ एक ही स्थान पर।
+
+</p>
+
+</section>
+
+<div class="container">
+
+<!-- Featured Tool -->
+
+<div class="card featured-card">
+
+<div class="featured-badge">
+
+⭐ Most Popular Tool
+
+</div>
+
+<h2>
+
+🏡 Premium Land Calculator
+
+</h2>
+
+<p>
+
+बीघा, कट्ठा, धुर, डिसमिल, एकड़,
+हेक्टेयर, वर्ग फुट, वर्ग गज तथा
+वर्ग मीटर की गणना करें।
+
+<br><br>
+
+4 हाथ से 9 हाथ तक सभी लग्गा सपोर्ट।
+
+</p>
+
+<button class="btn open-btn"
+onclick="window.location.href='land-calculator.html'">
+
+🚀 Premium Land Calculator खोलें
+
+</button>
+
+</div>
+<!-- Tools Dashboard -->
+
+<div class="card">
+
+<h2 style="text-align:center;color:#2563eb;margin-bottom:25px;">
+
+🛠️ Premium Land Tools Dashboard
+
+</h2>
+
+<div class="tools-grid">
+
+    <!-- Amin Calculator -->
+    <div class="tool-box">
+
+        <div class="tool-icon">🏡</div>
+
+        <h3>Amin Calculator</h3>
+
+        <p>
+        अमीन माप एवं बिहार लग्गा आधारित भूमि गणना।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='amin-calculator.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Length Converter -->
+    <div class="tool-box">
+
+        <div class="tool-icon">📏</div>
+
+        <h3>Length Converter</h3>
+
+        <p>
+        जरिब, कड़ी, हाथ, फुट, गज एवं मीटर कन्वर्टर।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='length-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Dynamic Converter -->
+    <div class="tool-box">
+
+        <div class="tool-icon">🔄</div>
+
+        <h3>Dynamic Converter</h3>
+
+        <p>
+        सभी यूनिट का Premium Conversion Tool।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='dynamic-unit-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Laggi Converter -->
+    <div class="tool-box">
+
+        <div class="tool-icon">📐</div>
+
+        <h3>Laggi Converter</h3>
+
+        <p>
+        सभी लग्गा की पूरी जानकारी प्राप्त करें।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='laggi-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Kattha Dhurki -->
+    <div class="tool-box">
+
+        <div class="tool-icon">🏘️</div>
+
+        <h3>Kattha-Dhurki</h3>
+
+        <p>
+        कट्ठा, धुर एवं धुरकी रूपांतरण।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='kattha-dhurki-converter.html'">
+
+        खोलें
+
+        </button>
+        
+
+    </div>
+    <div class="tool-box">
+
+                <div class="tool-icon">📜</div>
+
+                <h3>Registry Expense Calculator</h3>
+
+                <p>
+                    संपत्ति मूल्य के आधार पर रजिस्ट्री खर्च जानें।
+                </p>
+               <button class="tool-btn"
+                onclick="window.location.href='registry-calculator.html.html'">
+
+                 खोलें
+
+                </button>
+                
+
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- Bihar Services -->
+
+<div class="card">
+
+<h2 style="text-align:center;color:#2563eb;">
+
+📚 Bihar Land Services
+
+</h2>
+
+<div class="services-list">
+
+<button class="service-btn"
+onclick="window.location.href='https://dlrs.bihar.gov.in/surveystatusdistrict.aspx'">
+
+📖 अपने गांव में सर्वेक्षण की स्थिति देखें
+
+</button>
+
+<button class="service-btn"
+onclick="window.location.href='https://emutation.bihar.gov.in/biharBhumireport/ViewJamabandi'">
+
+📄 जमाबंदी पंजी देखें
+
+</button>
+
+<button class="service-btn"
+onclick="window.location.href='Revenue-Glossary.pdf'">
+
+📚 भूमि शब्दावली एवं समाधान
+
+</button>
+
+<button class="service-btn"
+onclick="window.location.href='https://dlrs.bihar.gov.in/'">
+
+🏛️ बिहार सर्वेक्षण पोर्टल
+
+</button>
+
+</div>
+
+</div>
+
+<style>
+
+/* Tools Grid */
+
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+.tool-box{
+background:#f8fafc;
+padding:25px 20px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.tool-box:hover{
+transform:translateY(-5px);
+}
+
+.tool-icon{
+font-size:42px;
+margin-bottom:12px;
+}
+
+.tool-box h3{
+color:#1e40af;
+margin-bottom:10px;
+}
+
+.tool-box p{
+font-size:14px;
+line-height:1.6;
+color:#4b5563;
+margin-bottom:15px;
+}
+
+.tool-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tool-btn:hover{
+opacity:.95;
+}
+
+/* Bihar Services */
+
+.services-list{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.service-btn{
+padding:15px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#ea580c,#c2410c);
+color:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.service-btn:hover{
+transform:translateY(-2px);
+}
+
+</style>
+<!-- Premium Features -->
+
+<div class="card">
+
+    <h2 style="text-align:center;color:#2563eb;">
+        ✨ Premium Features
+    </h2>
+
+    <div class="features-grid">
+
+        <div class="feature-item">
+            ✅ बिहार आधारित भूमि माप
+        </div>
+
+        <div class="feature-item">
+            📱 Mobile Friendly Design
+        </div>
+
+        <div class="feature-item">
+            ⚡ Fast Calculation
+        </div>
+
+        <div class="feature-item">
+            🖨️ Print Support
+        </div>
+
+        <div class="feature-item">
+            📋 Copy Result
+        </div>
+
+        <div class="feature-item">
+            💬 WhatsApp Share
+        </div>
+
+        <div class="feature-item">
+            🔄 All Lagga Support
+        </div>
+
+        <div class="feature-item">
+            🛡️ Secure & Trusted
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Install App Popup -->
+
+<div id="installPopup" class="install-popup">
+
+    <div class="install-content">
+
+        <div class="install-icon">
+            📲
+        </div>
+
+        <h2>Install eBhulekh App</h2>
+
+        <p>
+            बेहतर अनुभव के लिए eBhulekh Services को अपने मोबाइल की Home Screen पर Install करें।
+        </p>
+
+        <div class="install-buttons">
+
+            <button id="installBtn">
+                Install Now
+            </button>
+
+            <button onclick="closeInstallPopup()">
+                Later
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        🏡
+    </div>
+
+    <h2>eBhulekh Services</h2>
+
+    <p class="footer-tagline">
+        Digital Land Measurement & Conversion Solutions
+    </p>
+
+    <div class="footer-info">
+
+        <p>📍 Supaul, Bihar</p>
+
+        <p>📞 +91 7367910169</p>
+
+        <p>✉️ ebhulekhservices@gmail.com</p>
+
+    </div>
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            🏠 Home
+        </a>
+
+        <a href="amin-calculator.html">
+            🏡 Amin Calculator
+        </a>
+
+        <a href="dynamic-unit-converter.html">
+            🔄 Dynamic Converter
+        </a>
+
+        <a href="https://wa.me/917367910169"
+        target="_blank">
+
+            💬 WhatsApp
+
+        </a>
+
+    </div>
+
+    <div class="footer-badge">
+        🛡 Secure • Trusted • User Friendly
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 eBhulekh Services. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<style>
+
+/* Features */
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:25px;
+}
+
+.feature-item{
+background:#eff6ff;
+padding:18px;
+border-radius:15px;
+font-weight:600;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+/* Install Popup */
+
+.install-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.install-content{
+background:white;
+padding:30px;
+border-radius:25px;
+max-width:400px;
+width:100%;
+text-align:center;
+animation:popup .4s ease;
+}
+
+@keyframes popup{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.install-icon{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.install-content h2{
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.install-content p{
+color:#4b5563;
+line-height:1.7;
+}
+
+.install-buttons{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.install-buttons button{
+flex:1;
+padding:12px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#installBtn{
+background:#2563eb;
+color:white;
+}
+
+.install-buttons button:last-child{
+background:#e5e7eb;
+}
+
+/* Footer */
+
+.footer{
+background:linear-gradient(135deg,#1e40af,#2563eb);
+color:white;
+text-align:center;
+padding:45px 20px 30px;
+margin-top:50px;
+border-top-left-radius:35px;
+border-top-right-radius:35px;
+}
+
+.footer-logo{
+width:75px;
+height:75px;
+margin:auto;
+background:white;
+color:#2563eb;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:38px;
+margin-bottom:15px;
+}
+
+.footer h2{
+margin-bottom:10px;
+}
+
+.footer-tagline{
+margin-bottom:20px;
+opacity:.9;
+}
+
+.footer-info p{
+margin:8px 0;
+}
+
+.footer-links{
+margin:25px 0;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+display:inline-block;
+margin:8px;
+padding:10px 18px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.3);
+}
+
+.footer-links a:hover{
+background:rgba(255,255,255,.15);
+}
+
+.footer-badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:25px;
+background:rgba(255,255,255,.15);
+margin-bottom:20px;
+}
+
+.footer hr{
+border:none;
+height:1px;
+background:rgba(255,255,255,.3);
+margin:20px 0;
+}
+
+.copyright{
+font-size:14px;
+opacity:.9;
+}
+
+@media(max-width:768px){
+
+.install-buttons{
+flex-direction:column;
+}
+
+.footer-links a{
+display:block;
+max-width:250px;
+margin:10px auto;
+}
+
+}
+
+</style>
+
+
+<script>
+
+/* Install App */
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e)=>{
+
+    e.preventDefault();
+
+    deferredPrompt = e;
+
+    setTimeout(()=>{
+
+        document.getElementById("installPopup")
+        .style.display="flex";
+
+    },5000);
+
+});
+
+
+document.getElementById("installBtn")
+.addEventListener("click", async()=>{
+
+    if(deferredPrompt){
+
+        deferredPrompt.prompt();
+
+        const choice =
+        await deferredPrompt.userChoice;
+
+        deferredPrompt = null;
+
+        document.getElementById("installPopup")
+        .style.display="none";
+    }
+
+});
+
+
+function closeInstallPopup(){
+
+    document.getElementById("installPopup")
+    .style.display="none";
+
+}
+
+
+/* Service Worker */
+
+if('serviceWorker' in navigator){
+
+    window.addEventListener('load', ()=>{
+
+        navigator.serviceWorker
+        .register('service-worker.js')
+
+        .then(()=>{
+
+            console.log("Service Worker Registered");
+
+        })
+
+        .catch((err)=>{
+
+            console.log(err);
+
+        });
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

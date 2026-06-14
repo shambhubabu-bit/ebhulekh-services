@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>eBhulekh Services | Premium Land Calculator</title>
+<title>eBhulekh Services | Bihar Land Tools</title>
 
 <link rel="manifest" href="manifest.json">
 
@@ -53,18 +54,17 @@ color:white;
 
 header{
 background:linear-gradient(135deg,#1e40af,#2563eb);
-padding:35px 20px;
+padding:40px 20px;
 text-align:center;
 color:white;
 box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 .header-logo{
-width:90px;
-height:90px;
+width:95px;
+height:95px;
 margin:auto;
 background:white;
-color:#2563eb;
 border-radius:50%;
 display:flex;
 justify-content:center;
@@ -74,198 +74,134 @@ margin-bottom:15px;
 }
 
 header h1{
-font-size:34px;
-margin-bottom:8px;
+font-size:36px;
+margin-bottom:10px;
 }
 
 .header-subtitle{
-font-size:16px;
+font-size:17px;
 opacity:.95;
 }
 
 .header-badge{
 display:inline-block;
-margin-top:15px;
+margin-top:18px;
 padding:10px 20px;
 background:rgba(255,255,255,.18);
 border-radius:30px;
 font-size:14px;
 }
 
-.header-stats{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-margin-top:20px;
+/* Install Button */
+
+.install-btn{
+margin-top:18px;
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#2563eb;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-.stat-box{
-padding:10px 16px;
-background:rgba(255,255,255,.15);
-border-radius:12px;
-backdrop-filter:blur(5px);
-font-size:14px;
+.install-btn:hover{
+transform:translateY(-2px);
 }
 
 /* Hero */
 
 .hero{
-padding:30px 20px;
+padding:35px 20px;
 text-align:center;
 }
 
 .hero h2{
+font-size:32px;
 color:#1e40af;
-margin-bottom:10px;
-font-size:30px;
+margin-bottom:12px;
 }
 
 .hero p{
+font-size:17px;
 color:#4b5563;
-font-size:16px;
-text-align:center;
+line-height:1.7;
+max-width:700px;
+margin:auto;
 }
 
-/* Main Container */
+/* Container */
 
 .container{
-max-width:900px;
+max-width:1000px;
 margin:auto;
 padding:20px;
 }
 
+/* Card */
+
 .card{
 background:white;
 padding:25px;
-border-radius:20px;
+border-radius:22px;
 box-shadow:0 8px 25px rgba(0,0,0,.08);
 margin-bottom:25px;
 }
 
-.card h2{
+/* Featured Tool */
+
+.featured-card{
+background:linear-gradient(135deg,#fff7ed,#ffedd5);
+border:3px solid #fb923c;
 text-align:center;
-color:#2563eb;
+}
+
+.featured-badge{
+display:inline-block;
+padding:8px 18px;
+background:#f97316;
+color:white;
+border-radius:25px;
+font-size:14px;
+font-weight:bold;
 margin-bottom:15px;
 }
 
-/* Notice */
+.featured-card h2{
+color:#c2410c;
+margin-bottom:15px;
+font-size:30px;
+}
 
-.notice{
-background:linear-gradient(135deg,#ffffff,#eff6ff);
-border-left:6px solid #2563eb;
-padding:18px;
-border-radius:15px;
+.featured-card p{
+color:#7c2d12;
 line-height:1.8;
 margin-bottom:20px;
-box-shadow:0 4px 12px rgba(0,0,0,.05);
-}
-
-.notice-title{
-font-size:20px;
-font-weight:bold;
-color:#1e40af;
-margin-bottom:10px;
-}
-
-.notice p{
-color:#4b5563;
-}
-
-/* Inputs */
-
-label{
-font-weight:600;
-display:block;
-margin-top:15px;
-margin-bottom:5px;
-}
-
-select,
-input{
-width:100%;
-padding:14px;
-border:1px solid #d1d5db;
-border-radius:12px;
-font-size:16px;
-outline:none;
-}
-
-select:focus,
-input:focus{
-border-color:#2563eb;
-box-shadow:0 0 0 3px rgba(37,99,235,.15);
 }
 
 /* Buttons */
 
 .btn{
 width:100%;
-padding:14px;
+padding:15px;
 border:none;
-border-radius:12px;
+border-radius:14px;
 font-size:16px;
 font-weight:bold;
 cursor:pointer;
-margin-top:12px;
 transition:.3s;
 }
 
-.calculate-btn{
+.open-btn{
 background:linear-gradient(135deg,#059669,#047857);
 color:white;
 }
 
-.calculate-btn:hover{
+.open-btn:hover{
 transform:translateY(-2px);
 }
-
-.print-btn{
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-color:white;
-}
-
-.copy-btn{
-background:linear-gradient(135deg,#7c3aed,#6d28d9);
-color:white;
-}
-
-.share-btn{
-background:linear-gradient(135deg,#25D366,#16a34a);
-color:white;
-}
-
-/* Result */
-
-.result-card{
-margin-top:20px;
-padding:20px;
-background:#ecfdf5;
-border:3px solid #10b981;
-border-radius:18px;
-text-align:center;
-font-size:20px;
-font-weight:bold;
-color:#065f46;
-line-height:1.8;
-}
-
-.result{
-margin-top:20px;
-}
-
-.result div{
-display:flex;
-justify-content:space-between;
-padding:12px;
-border-bottom:1px solid #e5e7eb;
-}
-
-.result span:last-child{
-font-weight:bold;
-}
-
-/* Responsive */
 
 @media(max-width:768px){
 
@@ -274,123 +210,22 @@ font-size:28px;
 }
 
 .hero h2{
+font-size:25px;
+}
+
+.featured-card h2{
 font-size:24px;
 }
 
-.card{
-padding:18px;
-}
-
-.result div{
-font-size:14px;
-}
-
-}
-
-
-.slides img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    display:block;
-}
-
-.fade{
-    animation:fadeEffect 1s;
-}
-
-@keyframes fadeEffect{
-    from{opacity:.4}
-    to{opacity:1}
-}
-
-.slider-logo{
-    position:absolute;
-    top:15px;
-    left:15px;
-    z-index:20;
-}
-
-.slider-logo img{
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    background:white;
-    padding:4px;
-    box-shadow:0 4px 15px rgba(0,0,0,.3);
-}
-
-.prev,.next{
-    cursor:pointer;
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    padding:14px;
-    color:white;
-    font-size:28px;
-    font-weight:bold;
-    background:rgba(0,0,0,.35);
-    border-radius:50%;
-    user-select:none;
-}
-
-.prev{
-    left:15px;
-}
-
-.next{
-    right:15px;
-}
-
-.prev:hover,
-.next:hover{
-    background:rgba(0,0,0,.6);
-}
-
-.dots-container{
-    position:absolute;
-    bottom:12px;
-    width:100%;
-    text-align:center;
-}
-
-.dot{
-    height:12px;
-    width:12px;
-    margin:0 5px;
-    background:#ddd;
-    border-radius:50%;
-    display:inline-block;
-    cursor:pointer;
-}
-
-.active{
-    background:#0f766e;
-}
-
-@media(max-width:768px){
-
-    .slides img{
-        height:180px;
-    }
-
-    .slider-logo img{
-        width:60px;
-        height:60px;
-    }
-
-    .prev,.next{
-        font-size:22px;
-        padding:10px;
-    }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<a href="https://wa.me/917367910169?text=नमस्ते,%20मुझे%20भूमि%20माप%20के%20संबंध%20में%20जानकारी%20चाहिए।"
+<a href="https://wa.me/917367910169"
 target="_blank"
 class="whatsapp-btn">
 
@@ -399,7 +234,7 @@ class="whatsapp-btn">
 </a>
 
 <header>
-   
+
 <div class="header-logo">
 🏡
 </div>
@@ -407,466 +242,562 @@ class="whatsapp-btn">
 <h1>eBhulekh Services</h1>
 
 <p class="header-subtitle">
-Digital Land Measurement & Conversion Solutions
+
+बिहार भूमि माप एवं कन्वर्जन सेवाएँ
+
 </p>
 
 <div class="header-badge">
-🛡 Secure • Trusted • User Friendly
-</div>
 
-<div class="header-stats">
-
-<div class="stat-box">📏 Land Tools</div>
-
-<div class="stat-box">⚡ Fast Conversion</div>
-
-<div class="stat-box">📱 Mobile Friendly</div>
+🛡 Secure • Trusted • Bihar Based
 
 </div>
 
+<br>
+
+<button id="installBtn"
+class="install-btn"
+style="display:none;">
+
+📲 Install eBhulekh App
+
+</button>
 
 </header>
-<!-- Premium Slider -->
 
 <section class="hero">
 
-<h2>भूमि कैलकुलेटर ( सभी लग्गा )</h2>
+<h2>
+
+Bihar Premium Land Tools Dashboard
+
+</h2>
 
 <p>
-बीघा, कट्ठा, धुर, डिसमिल, एकड़, हेक्टेयर आदि की गणना करें।
+
+बिहार के सभी लग्गा आधारित भूमि कैलकुलेटर,
+अमीन कैलकुलेटर, लंबाई कन्वर्टर तथा अन्य
+भूमि संबंधी सेवाएँ एक ही स्थान पर।
+
 </p>
 
 </section>
 
 <div class="container">
 
-<div class="card">
+<!-- Featured Tool -->
 
-<h2>🏡 Premium Land Calculator</h2>
+<div class="card featured-card">
 
-<div class="notice">
+<div class="featured-badge">
 
-<div class="notice-title">
-📢 महत्वपूर्ण सूचना
+⭐ Most Popular Tool
+
 </div>
+
+<h2>
+
+🏡 Premium Land Calculator
+
+</h2>
 
 <p>
-किसी भी जमीन की सही माप के लिए पहले यह सुनिश्चित करें कि आपके गांव या क्षेत्र में प्रचलित हाथ/लग्गा की लंबाई क्या है।
+
+बीघा, कट्ठा, धुर, डिसमिल, एकड़,
+हेक्टेयर, वर्ग फुट, वर्ग गज तथा
+वर्ग मीटर की गणना करें।
+
+<br><br>
+
+4 हाथ से 9 हाथ तक सभी लग्गा सपोर्ट।
+
 </p>
 
-</div>
-<label>लग्गा चुनें</label>
+<button class="btn open-btn"
+onclick="window.location.href='land-calculator.html'">
 
-<select id="lagga">
-
-<option value="4">4 हाथ</option>
-<option value="4.5">4½ हाथ</option>
-<option value="5">5 हाथ</option>
-<option value="5.5">5½ हाथ</option>
-<option value="6">6 हाथ</option>
-<option value="6.5" selected>6½ हाथ</option>
-<option value="7">7 हाथ</option>
-<option value="7.5">7½ हाथ</option>
-<option value="8">8 हाथ</option>
-<option value="8.5">8½ हाथ</option>
-<option value="9">9 हाथ</option>
-
-</select>
-
-<label>Unit चुनें</label>
-
-<select id="unit">
-
-<option value="bigha">बीघा</option>
-<option value="kattha">कट्ठा</option>
-<option value="dhur">धुर</option>
-<option value="decimal">डिसमिल</option>
-<option value="acre">एकड़</option>
-<option value="sqyd">वर्ग गज</option>
-<option value="sqft">वर्ग फुट</option>
-<option value="sqm">वर्ग मीटर</option>
-<option value="hectare">हेक्टेयर</option>
-
-</select>
-
-<label>मान दर्ज करें</label>
-
-<input
-type="number"
-id="value"
-placeholder="उदाहरण: 1.5"
->
-
-<button
-class="btn calculate-btn"
-onclick="calculate()">
-
-🧮 Calculate
+🚀 Premium Land Calculator खोलें
 
 </button>
 
-<button
-class="btn print-btn"
-onclick="window.print()">
-
-🖨️ Print Result
-
-</button>
-
-<button
-class="btn copy-btn"
-onclick="copyResult()">
-
-📋 Copy Result
-
-</button>
-
-<button
-class="btn share-btn"
-onclick="shareWhatsApp()">
-
-📤 WhatsApp Share
-
-</button>
-
-<div
-id="landResult"
-class="result-card">
-
-परिणाम यहाँ दिखाई देगा
-
 </div>
-<div class="bkd-row">
+<!-- Tools Dashboard -->
 
-    <span class="bkd-title">
-        🏡 बीघा • कट्ठा • धुर • धुरकी
-    </span>
+<div class="card">
 
-    <span id="bkdResult">
-        परिणाम यहाँ दिखाई देगा
-    </span>
+<h2 style="text-align:center;color:#2563eb;margin-bottom:25px;">
 
-</div>
+🛠️ Premium Land Tools Dashboard
 
-<div class="result">
+</h2>
 
-<div>
+<div class="tools-grid">
 
-<span>बीघा</span>
+    <!-- Amin Calculator -->
+    <div class="tool-box">
 
-<span id="bigha">0</span>
+        <div class="tool-icon">🏡</div>
 
-</div>
+        <h3>Amin Calculator</h3>
 
-<div>
+        <p>
+        अमीन माप एवं बिहार लग्गा आधारित भूमि गणना।
+        </p>
 
-<span>कट्ठा</span>
+        <button class="tool-btn"
+        onclick="window.location.href='amin-calculator.html'">
 
-<span id="kattha">0</span>
+        खोलें
 
-</div>
-
-<div>
-
-<span>धुर</span>
-
-<span id="dhur">0</span>
-
-</div>
-
-<div>
-
-<span>डिसमिल</span>
-
-<span id="decimal">0</span>
-
-</div>
-
-<div>
-
-<span>एकड़</span>
-
-<span id="acre">0</span>
-
-</div>
-
-<div>
-
-<span>वर्ग गज</span>
-
-<span id="sqyd">0</span>
-
-</div>
-
-<div>
-
-<span>वर्ग फुट</span>
-
-<span id="sqft">0</span>
-
-</div>
-
-<div>
-
-<span>वर्ग मीटर</span>
-
-<span id="sqm">0</span>
-
-</div>
-
-<div>
-
-<span>हेक्टेयर</span>
-
-<span id="hectare">0</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="card tool-card" id="kddCard">
-
-    <h2>
-        🏡 कट्ठा • धुर • धुरकी ⇄ डिसमिल Converter
-    </h2>
-
-    
-
-    <div class="tool-info">
-
-        <ul>
-
-            <li>✅ कट्ठा, धुर और धुरकी को डिसमिल में बदलें।</li>
-
-            <li>✅ डिसमिल को कट्ठा, धुर और धुरकी में बदलें।</li>
-
-            <li>✅ 4 हाथ से 9 हाथ तक सभी लग्गा का उपयोग करें।</li>
-
-            <li>✅ 1 धुर = 20 धुरकी के आधार पर गणना करें।</li>
-
-            <li>✅ Swap सुविधा का उपयोग करें।</li>
-
-            <li>✅ Result को WhatsApp पर Share करें।</li>
-
-            <li>✅ Result को Print करें।</li>
-
-        </ul>
+        </button>
 
     </div>
 
-    <button class="btn share-btn"
-    onclick="window.location.href='kattha-dhurki-converter.html'">
+    <!-- Length Converter -->
+    <div class="tool-box">
 
-        🏡 कट्ठा • धुरकी Converter खोलें
+        <div class="tool-icon">📏</div>
 
-    </button>
+        <h3>Length Converter</h3>
+
+        <p>
+        जरिब, कड़ी, हाथ, फुट, गज एवं मीटर कन्वर्टर।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='length-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Dynamic Converter -->
+    <div class="tool-box">
+
+        <div class="tool-icon">🔄</div>
+
+        <h3>Dynamic Converter</h3>
+
+        <p>
+        सभी यूनिट का Premium Conversion Tool।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='dynamic-unit-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Laggi Converter -->
+    <div class="tool-box">
+
+        <div class="tool-icon">📐</div>
+
+        <h3>Laggi Converter</h3>
+
+        <p>
+        सभी लग्गा की पूरी जानकारी प्राप्त करें।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='laggi-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
+
+    <!-- Kattha Dhurki -->
+    <div class="tool-box">
+
+        <div class="tool-icon">🏘️</div>
+
+        <h3>Kattha-Dhurki</h3>
+
+        <p>
+        कट्ठा, धुर एवं धुरकी रूपांतरण।
+        </p>
+
+        <button class="tool-btn"
+        onclick="window.location.href='kattha-dhurki-converter.html'">
+
+        खोलें
+
+        </button>
+
+    </div>
 
 </div>
 
-
-<!-- Laggi Converter Card -->
-
-<div class="card tool-card" id="laggiCard">
-
-<h2>📏 Laggi Converter Premium Tool</h2>
-
-
-
-<div class="tool-info">
-
-<ul>
-<li>✅ 4 हाथ से 9 हाथ तक सभी लग्गा देखें।</li>
-
-<li>✅ 1 धुर, 1 कट्ठा, 1 बीघा की जानकारी प्राप्त करें।</li>
-
-<li>✅ डिसमिल का मान देखें।</li>
-
-<li>✅ Sq Ft, Sq Yard और Sq Meter में जानकारी प्राप्त करें।</li>
-</ul>
-
 </div>
 
-<button class="btn print-btn"
-onclick="window.location.href='laggi-converter.html'">
+<!-- Bihar Services -->
 
-🔄 Laggi Converter खोलें
+<div class="card">
 
-</button>
+<h2 style="text-align:center;color:#2563eb;">
 
-</div>
+📚 Bihar Land Services
 
-<!-- Dynamic Converter Card -->
+</h2>
 
-<div class="card tool-card" id="dynamicCard">
+<div class="services-list">
 
-<h2>🔄 Dynamic Unit Converter</h2>
-
-
-
-<div class="tool-info">
-
-<ul>
-
-<li>✅ धुर को कट्ठा, बीघा और डिसमिल में बदलें।</li>
-
-<li>✅ कट्ठा को धुर, बीघा और डिसमिल में बदलें।</li>
-
-<li>✅ बीघा को अन्य यूनिट में बदलें।</li>
-
-<li>✅ Swap सुविधा का उपयोग करें।</li>
-
-<li>✅ सभी लग्गा के अनुसार Premium Conversion करें।</li>
-
-</ul>
-
-</div>
-
-<button class="btn calculate-btn"
-onclick="window.location.href='dynamic-unit-converter.html'">
-
-📐 Dynamic Converter खोलें
-
-</button>
-
-</div>
-</div>
-<div>
-
-
-<button class="btn info-btn"
+<button class="service-btn"
 onclick="window.location.href='https://dlrs.bihar.gov.in/surveystatusdistrict.aspx'">
 
 📖 अपने गांव में सर्वेक्षण की स्थिति देखें
 
 </button>
 
-</div>
-
-<div>
-
-<button class="btn info-btn"
+<button class="service-btn"
 onclick="window.location.href='https://emutation.bihar.gov.in/biharBhumireport/ViewJamabandi'">
 
-📖 जमाबंदी पंजी देखें
+📄 जमाबंदी पंजी देखें
 
 </button>
 
-</div>
-<div>
-
-<button class="btn info-btn"
+<button class="service-btn"
 onclick="window.location.href='Revenue-Glossary.pdf'">
 
-📚 भूमि शब्दावली एवं समाधान जानकारी देखें
+📚 भूमि शब्दावली एवं समाधान
 
 </button>
 
-</div>
-<div>
-<button class="btn info-btn"
+<button class="service-btn"
 onclick="window.location.href='https://dlrs.bihar.gov.in/'">
 
-📖 बिहार सर्वेक्षण पोर्टल
+🏛️ बिहार सर्वेक्षण पोर्टल
 
 </button>
 
 </div>
 
-<!-- Premium Feature Box -->
+</div>
+
+<style>
+
+/* Tools Grid */
+
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+.tool-box{
+background:#f8fafc;
+padding:25px 20px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.tool-box:hover{
+transform:translateY(-5px);
+}
+
+.tool-icon{
+font-size:42px;
+margin-bottom:12px;
+}
+
+.tool-box h3{
+color:#1e40af;
+margin-bottom:10px;
+}
+
+.tool-box p{
+font-size:14px;
+line-height:1.6;
+color:#4b5563;
+margin-bottom:15px;
+}
+
+.tool-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.tool-btn:hover{
+opacity:.95;
+}
+
+/* Bihar Services */
+
+.services-list{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.service-btn{
+padding:15px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#ea580c,#c2410c);
+color:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.service-btn:hover{
+transform:translateY(-2px);
+}
+
+</style>
+<!-- Premium Features -->
 
 <div class="card">
 
-<h2>
+    <h2 style="text-align:center;color:#2563eb;">
+        ✨ Premium Features
+    </h2>
 
-✨ Premium Features
+    <div class="features-grid">
 
-</h2>
+        <div class="feature-item">
+            ✅ बिहार आधारित भूमि माप
+        </div>
 
-<div class="notice">
+        <div class="feature-item">
+            📱 Mobile Friendly Design
+        </div>
 
-<p>
+        <div class="feature-item">
+            ⚡ Fast Calculation
+        </div>
 
-✅ सभी लग्गा सपोर्ट<br><br>
+        <div class="feature-item">
+            🖨️ Print Support
+        </div>
 
-✅ मोबाइल एवं डेस्कटॉप फ्रेंडली<br><br>
+        <div class="feature-item">
+            📋 Copy Result
+        </div>
 
-✅ WhatsApp शेयर सुविधा<br><br>
+        <div class="feature-item">
+            💬 WhatsApp Share
+        </div>
 
-✅ Print एवं Copy Result<br><br>
+        <div class="feature-item">
+            🔄 All Lagga Support
+        </div>
 
-✅ बिहार भूमि माप आधारित गणना<br><br>
+        <div class="feature-item">
+            🛡️ Secure & Trusted
+        </div>
 
-✅ तेज एवं सुरक्षित कैलकुलेशन
-
-</p>
+    </div>
 
 </div>
 
+
+<!-- Install App Popup -->
+
+<div id="installPopup" class="install-popup">
+
+    <div class="install-content">
+
+        <div class="install-icon">
+            📲
+        </div>
+
+        <h2>Install eBhulekh App</h2>
+
+        <p>
+            बेहतर अनुभव के लिए eBhulekh Services को अपने मोबाइल की Home Screen पर Install करें।
+        </p>
+
+        <div class="install-buttons">
+
+            <button id="installBtn">
+                Install Now
+            </button>
+
+            <button onclick="closeInstallPopup()">
+                Later
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
-<!-- Premium Footer -->
+
+
+<!-- Footer -->
 
 <footer class="footer">
 
-<div class="footer-logo">
-🏡
-</div>
+    <div class="footer-logo">
+        🏡
+    </div>
 
-<h2>eBhulekh Services</h2>
+    <h2>eBhulekh Services</h2>
 
-<p class="footer-tagline">
-Digital Land Measurement & Conversion Solutions
-</p>
+    <p class="footer-tagline">
+        Digital Land Measurement & Conversion Solutions
+    </p>
 
-<div class="footer-info">
+    <div class="footer-info">
 
-<p>📍 Supaul, Bihar</p>
+        <p>📍 Supaul, Bihar</p>
 
-<p>📞 +91 7367910169</p>
+        <p>📞 +91 7367910169</p>
 
-<p>✉️ ebhulekhservices@gmail.com</p>
+        <p>✉️ ebhulekhservices@gmail.com</p>
 
-</div>
+    </div>
 
-<div class="footer-links">
+    <div class="footer-links">
 
-<a href="index.html">
-🏠 Home
-</a>
+        <a href="index.html">
+            🏠 Home
+        </a>
 
-<a href="laggi-converter.html">
-📏 Laggi Converter
-</a>
+        <a href="amin-calculator.html">
+            🏡 Amin Calculator
+        </a>
 
-<a href="dynamic-unit-converter.html">
-🔄 Dynamic Converter
-</a>
+        <a href="dynamic-unit-converter.html">
+            🔄 Dynamic Converter
+        </a>
 
-<a href="https://wa.me/917367910169"
-target="_blank">
-💬 WhatsApp
-</a>
+        <a href="https://wa.me/917367910169"
+        target="_blank">
 
-</div>
+            💬 WhatsApp
 
-<div class="footer-badge">
+        </a>
 
-🛡 Secure • Trusted • User Friendly
+    </div>
 
-</div>
+    <div class="footer-badge">
+        🛡 Secure • Trusted • User Friendly
+    </div>
 
-<hr>
+    <hr>
 
-<p class="copyright">
-
-© 2026 eBhulekh Services. All Rights Reserved.
-
-</p>
+    <p class="copyright">
+        © 2026 eBhulekh Services. All Rights Reserved.
+    </p>
 
 </footer>
 
+
 <style>
+
+/* Features */
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:25px;
+}
+
+.feature-item{
+background:#eff6ff;
+padding:18px;
+border-radius:15px;
+font-weight:600;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+/* Install Popup */
+
+.install-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.install-content{
+background:white;
+padding:30px;
+border-radius:25px;
+max-width:400px;
+width:100%;
+text-align:center;
+animation:popup .4s ease;
+}
+
+@keyframes popup{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.install-icon{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.install-content h2{
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.install-content p{
+color:#4b5563;
+line-height:1.7;
+}
+
+.install-buttons{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.install-buttons button{
+flex:1;
+padding:12px;
+border:none;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#installBtn{
+background:#2563eb;
+color:white;
+}
+
+.install-buttons button:last-child{
+background:#e5e7eb;
+}
 
 /* Footer */
 
@@ -895,13 +826,12 @@ margin-bottom:15px;
 }
 
 .footer h2{
-font-size:28px;
 margin-bottom:10px;
 }
 
 .footer-tagline{
-opacity:.9;
 margin-bottom:20px;
+opacity:.9;
 }
 
 .footer-info p{
@@ -919,8 +849,7 @@ display:inline-block;
 margin:8px;
 padding:10px 18px;
 border-radius:25px;
-border:1px solid rgba(255,255,255,.35);
-transition:.3s;
+border:1px solid rgba(255,255,255,.3);
 }
 
 .footer-links a:hover{
@@ -938,7 +867,7 @@ margin-bottom:20px;
 .footer hr{
 border:none;
 height:1px;
-background:rgba(255,255,255,.25);
+background:rgba(255,255,255,.3);
 margin:20px 0;
 }
 
@@ -949,503 +878,94 @@ opacity:.9;
 
 @media(max-width:768px){
 
-.footer h2{
-font-size:24px;
+.install-buttons{
+flex-direction:column;
 }
 
 .footer-links a{
 display:block;
-margin:10px auto;
 max-width:250px;
+margin:10px auto;
 }
 
-}
-.tool-info{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    transform:translateY(-15px);
-    transition:all .4s ease;
-    background:#f8fafc;
-    border-radius:15px;
-    margin-top:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.tool-card:hover .tool-info{
-    max-height:350px;
-    opacity:1;
-    transform:translateY(0);
-}
-
-.tool-card.active .tool-info{
-    max-height:350px;
-    opacity:1;
-    transform:translateY(0);
-}
-
-.tool-info ul{
-    padding:18px 25px;
-}
-
-.tool-info li{
-    margin:10px 0;
-    line-height:1.6;
-    color:#374151;
-}
-
-.info-toggle{
-    margin-top:15px;
-    background:linear-gradient(135deg,#0bc6f5a7,#0ad906b0);
-    color:#fff;
-}
-.bkd-row{
-margin-top:15px;
-padding:16px;
-border-radius:15px;
-background:linear-gradient(135deg,#fff7ed,#ffedd5);
-border:2px solid #fb923c;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-font-weight:bold;
-box-shadow:0 4px 12px rgba(251,146,60,.15);
-}
-
-.bkd-title{
-color:#c2410c;
-font-size:17px;
-}
-
-#bkdResult{
-color:#7c2d12;
-font-size:18px;
-}
-
-@media(max-width:768px){
-
-.bkd-row{
-text-align:center;
-justify-content:center;
-}
-
-#bkdResult{
-display:block;
-width:100%;
-font-size:16px;
-margin-top:8px;
-}
-
-}
-.info-btn{
-background:linear-gradient(135deg,#ea580c,#c2410c);
-color:white;
-}
-
-.info-btn:hover{
-transform:translateY(-2px);
-}
-.slider{
-    max-width:900px;
-    margin:20px auto;
-    position:relative;
-    overflow:hidden;
-    border-radius:20px;
-    box-shadow:0 6px 20px rgba(0,0,0,.15);
-}
-
-.slides{
-    display:none;
-}
-
-.slides img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    display:block;
-}
-
-.fade{
-    animation:fadeEffect 1s;
-}
-
-@keyframes fadeEffect{
-    from{opacity:.4;}
-    to{opacity:1;}
-}
-
-.slider-logo{
-    position:absolute;
-    top:15px;
-    left:15px;
-    z-index:10;
-}
-
-.slider-logo img{
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    background:white;
-    padding:4px;
-    box-shadow:0 4px 12px rgba(0,0,0,.25);
-}
-
-.dots-container{
-    position:absolute;
-    bottom:10px;
-    width:100%;
-    text-align:center;
-}
-
-.dot{
-    height:12px;
-    width:12px;
-    margin:0 4px;
-    background:#ddd;
-    border-radius:50%;
-    display:inline-block;
-}
-
-.active{
-    background:#0f766e;
-}
-
-@media(max-width:768px){
-    .slides img{
-        height:180px;
-    }
-
-    .slider-logo img{
-        width:60px;
-        height:60px;
-    }
 }
 
 </style>
+
+
 <script>
 
-// सभी लग्गा का डेटा (1 बीघा = वर्ग गज)
-const laggaData = {
-    "4":1600,
-    "4.5":2025,
-    "5":2500,
-    "5.5":3025,
-    "6":3600,
-    "6.5":4225,
-    "7":4900,
-    "7.5":5625,
-    "8":6400,
-    "8.5":7225,
-    "9":8100
-};
+/* Install App */
 
+let deferredPrompt;
 
-// डिसमिल को कट्ठा-धुर-धुरकी में बदलना
-function formatLand(decimalValue){
+window.addEventListener('beforeinstallprompt', (e)=>{
 
-    let totalKattha = decimalValue / 4.3647;
+    e.preventDefault();
 
-    let kattha = Math.floor(totalKattha);
+    deferredPrompt = e;
 
-    let totalDhur = (totalKattha - kattha) * 20;
+    setTimeout(()=>{
 
-    let dhur = Math.floor(totalDhur);
+        document.getElementById("installPopup")
+        .style.display="flex";
 
-    let dhurki = Math.round((totalDhur - dhur) * 20);
+    },5000);
 
-    if(dhurki >= 20){
-        dhur++;
-        dhurki -= 20;
-    }
+});
 
-    if(dhur >= 20){
-        kattha += Math.floor(dhur / 20);
-        dhur = dhur % 20;
-    }
 
-    return `${kattha} कट्ठा ${dhur} धुर ${dhurki} धुरकी`;
-}
+document.getElementById("installBtn")
+.addEventListener("click", async()=>{
 
+    if(deferredPrompt){
 
-// मुख्य कैलकुलेटर
-function calculate(){
+        deferredPrompt.prompt();
 
-    let lagga = document.getElementById("lagga").value;
+        const choice =
+        await deferredPrompt.userChoice;
 
-    let unit = document.getElementById("unit").value;
+        deferredPrompt = null;
 
-    let value = parseFloat(document.getElementById("value").value);
-
-    if(isNaN(value) || value <= 0){
-
-        document.getElementById("landResult").innerHTML =
-        "⚠️ कृपया मान दर्ज करें";
-
-        return;
-    }
-
-    let BIGHA = laggaData[lagga];
-
-    let sqyd = 0;
-
-    switch(unit){
-
-        case "bigha":
-            sqyd = value * BIGHA;
-            break;
-
-        case "kattha":
-            sqyd = value * (BIGHA/20);
-            break;
-
-        case "dhur":
-            sqyd = value * (BIGHA/400);
-            break;
-
-        case "decimal":
-            sqyd = value * 48.4;
-            break;
-
-        case "acre":
-            sqyd = value * 4840;
-            break;
-
-        case "sqft":
-            sqyd = value / 9;
-            break;
-
-        case "sqm":
-            sqyd = value * 1.19599;
-            break;
-
-        case "hectare":
-            sqyd = value * 11959.9;
-            break;
-
-        case "sqyd":
-            sqyd = value;
-            break;
-    }
-
-    let bigha = sqyd / BIGHA;
-    let kattha = bigha * 20;
-    let dhur = bigha * 400;
-
-    let acre = sqyd / 4840;
-
-    let decimal = acre * 100;
-
-    let sqft = sqyd * 9;
-
-    let sqm = sqyd * 0.836127;
-
-    let hectare = acre / 2.47105;
-
-
-    document.getElementById("bigha").innerText =
-    bigha.toFixed(4);
-
-    document.getElementById("kattha").innerText =
-    kattha.toFixed(4);
-
-    document.getElementById("dhur").innerText =
-    dhur.toFixed(4);
-
-    document.getElementById("decimal").innerText =
-    decimal.toFixed(4);
-
-    document.getElementById("acre").innerText =
-    acre.toFixed(4);
-
-    document.getElementById("sqyd").innerText =
-    sqyd.toFixed(2);
-
-    document.getElementById("sqft").innerText =
-    sqft.toFixed(2);
-
-    document.getElementById("sqm").innerText =
-    sqm.toFixed(2);
-
-    document.getElementById("hectare").innerText =
-    hectare.toFixed(4);
-
-
-    document.getElementById("landResult").innerHTML =
-
-    `🏡 <b>${lagga} हाथ लग्गा</b><br><br>
-
-    ${value} ${unit}<br>
-
-    = ${decimal.toFixed(4)} डिसमिल<br>
-
-    = ${acre.toFixed(4)} एकड़<br>
-
-    = ${formatLand(decimal)}`;
-
-
-    document.getElementById("bkdResult").innerHTML =
-" " + formatLand(decimal);
-
-}
-document.getElementById("bkdResult").innerText =
-"परिणाम यहाँ दिखाई देगा";
-
-
-
-// Result Copy
-function copyResult(){
-
-    let text =
-    document.getElementById("landResult").innerText;
-
-    navigator.clipboard.writeText(text);
-
-    alert("✅ Result Copy हो गया");
-}
-
-
-// WhatsApp Share
-function shareWhatsApp(){
-
-    let result =
-    document.getElementById("landResult").innerText;
-
-    if(result.includes("परिणाम यहाँ") || result.includes("कृपया")){
-
-        alert("⚠️ पहले Calculate करें");
-        return;
-    }
-
-    let websiteLink = "https://shambhubabu-bit.github.io/ebhulekh-services/";
-
-    let message =
-`🏡 eBhulekh Services
-
-📐 भूमि माप परिणाम:
-
-${result}
-
-🌐 हमारी वेबसाइट पर और भी भूमि कैलकुलेटर एवं कन्वर्टर का उपयोग करें:
-${websiteLink}
-
-🙏 धन्यवाद।`;
-
-    window.open(
-        "https://wa.me/?text=" + encodeURIComponent(message),
-        "_blank"
-    );
-}
-
-
-// Enter दबाने पर Calculate
-document.getElementById("value")
-.addEventListener("keypress",function(e){
-
-    if(e.key === "Enter"){
-
-        calculate();
-
+        document.getElementById("installPopup")
+        .style.display="none";
     }
 
 });
 
 
-// Input बदलने पर Auto Calculate
-document.getElementById("lagga")
-.addEventListener("change",()=>{
+function closeInstallPopup(){
 
-    if(document.getElementById("value").value!=""){
-        calculate();
-    }
-
-});
-
-document.getElementById("unit")
-.addEventListener("change",()=>{
-
-    if(document.getElementById("value").value!=""){
-        calculate();
-    }
-
-});
-function toggleToolInfo(id){
-
-    if(window.innerWidth <= 768){
-
-        document
-        .getElementById(id)
-        .classList.toggle("active");
-
-    }
-
-}
-function searchGlossary(){
-
-let input=document.getElementById("searchTerm")
-.value.toLowerCase();
-
-let cards=document.querySelectorAll(".glossary-item");
-
-cards.forEach(item=>{
-
-if(item.innerText.toLowerCase().includes(input)){
-item.style.display="block";
-}else{
-item.style.display="none";
-}
-
-});
+    document.getElementById("installPopup")
+    .style.display="none";
 
 }
 
 
-let slideIndex = 1;
-showSlides(slideIndex);
+/* Service Worker */
 
-function plusSlides(n){
-    showSlides(slideIndex += n);
+if('serviceWorker' in navigator){
+
+    window.addEventListener('load', ()=>{
+
+        navigator.serviceWorker
+        .register('service-worker.js')
+
+        .then(()=>{
+
+            console.log("Service Worker Registered");
+
+        })
+
+        .catch((err)=>{
+
+            console.log(err);
+
+        });
+
+    });
+
 }
-
-function currentSlide(n){
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n){
-
-    let slides =
-    document.getElementsByClassName("slides");
-
-    let dots =
-    document.getElementsByClassName("dot");
-
-    if(n > slides.length){
-        slideIndex = 1;
-    }
-
-    if(n < 1){
-        slideIndex = slides.length;
-    }
-
-    for(let i=0;i<slides.length;i++){
-        slides[i].style.display = "none";
-    }
-
-    for(let i=0;i<dots.length;i++){
-        dots[i].className =
-        dots[i].className.replace(" active","");
-    }
-
-    slides[slideIndex-1].style.display = "block";
-
-    dots[slideIndex-1].className += " active";
-}
-
-/* Auto Slide */
-setInterval(function(){
-    plusSlides(1);
-},4000);
 
 </script>
 

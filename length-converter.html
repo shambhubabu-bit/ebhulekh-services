@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>eBhulekh Services | Length Converter</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#eef5ff,#dbeafe);
+    color:#1f2937;
+    overflow-x:hidden;
+}
+
+/* WhatsApp */
+
+.whatsapp-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    z-index:999;
+}
+
+.whatsapp-btn i{
+    color:#fff;
+    font-size:30px;
+}
+
+/* Header */
+
+header{
+    background:linear-gradient(135deg,#1e40af,#2563eb);
+    color:#fff;
+    text-align:center;
+    padding:35px 20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.header-logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+header h1{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.header-subtitle{
+    opacity:.95;
+}
+
+.header-badge{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.18);
+}
+
+.header-stats{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.stat-box{
+    padding:10px 16px;
+    border-radius:12px;
+    background:rgba(255,255,255,.15);
+}
+
+/* Hero */
+
+.hero{
+    padding:30px 20px;
+    text-align:center;
+}
+
+.hero h2{
+    color:#1e40af;
+    margin-bottom:10px;
+    font-size:30px;
+}
+
+.hero p{
+    color:#4b5563;
+}
+
+/* Container */
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.card h2{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+/* Notice */
+
+.notice{
+    background:linear-gradient(135deg,#ffffff,#eff6ff);
+    border-left:6px solid #2563eb;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:20px;
+    line-height:1.8;
+}
+
+.notice-title{
+    font-size:20px;
+    font-weight:bold;
+    color:#1e40af;
+    margin-bottom:10px;
+}
+
+/* Form */
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+select,
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+select:focus,
+input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* Buttons */
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:12px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.calculate-btn{
+    background:linear-gradient(135deg,#059669,#047857);
+    color:white;
+}
+
+.swap-btn{
+    background:linear-gradient(135deg,#ea580c,#c2410c);
+    color:white;
+}
+
+.copy-btn{
+    background:linear-gradient(135deg,#7c3aed,#6d28d9);
+    color:white;
+}
+
+.share-btn{
+    background:linear-gradient(135deg,#25D366,#16a34a);
+    color:white;
+}
+
+.print-btn{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+}
+
+/* Result */
+
+.result-card{
+    margin-top:20px;
+    padding:20px;
+    border-radius:18px;
+    background:#ecfdf5;
+    border:3px solid #10b981;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:#065f46;
+    line-height:1.8;
+}
+
+.result{
+    margin-top:20px;
+}
+
+.result div{
+    display:flex;
+    justify-content:space-between;
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.result span:last-child{
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .result div{
+        font-size:14px;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<a href="https://wa.me/917367910169"
+target="_blank"
+class="whatsapp-btn">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<header>
+
+<div class="header-logo">
+📏
+</div>
+
+<h1>eBhulekh Services</h1>
+
+<p class="header-subtitle">
+Traditional & Modern Length Converter
+</p>
+
+<div class="header-badge">
+⚡ Fast • Accurate • Mobile Friendly
+</div>
+
+<div class="header-stats">
+
+<div class="stat-box">
+📐 Bihar Units
+</div>
+
+<div class="stat-box">
+🔄 Instant Convert
+</div>
+
+<div class="stat-box">
+📱 Premium Tool
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h2>📏 Length Converter</h2>
+
+<p>
+जरिब, कड़ी, हाथ, बित्ता, मुठ्ठी, इंच, फुट, गज और मीटर में आसानी से रूपांतरण करें।
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📐 Premium Length Converter</h2>
+
+<div class="notice">
+
+<div class="notice-title">
+📢 महत्वपूर्ण जानकारी
+</div>
+
+<p>
+यह टूल बिहार में प्रचलित पारंपरिक लंबाई इकाइयों तथा आधुनिक इकाइयों के बीच रूपांतरण के लिए बनाया गया है।
+</p>
+
+<p style="margin-top:10px;">
+⚠️ किसी सरकारी कार्य या कानूनी उपयोग से पहले स्थानीय अमीन या संबंधित विभाग से जानकारी सत्यापित अवश्य करें।
+</p>
+
+</div>
+<label>From Unit चुनें</label>
+
+<select id="fromUnit">
+
+    <option value="jarib">जरिब (Jarib)</option>
+
+    <option value="kadi">कड़ी (Kadi)</option>
+
+    <option value="hath">हाथ (Hath)</option>
+
+    <option value="bitta">बित्ता (Bitta)</option>
+
+    <option value="mutthi">मुठ्ठी (Mutthi)</option>
+
+    <option value="inch">इंच (Inch)</option>
+
+    <option value="feet">फुट (Feet)</option>
+
+    <option value="yard">गज (Yard)</option>
+
+    <option value="meter">मीटर (Meter)</option>
+
+</select>
+
+
+<label>To Unit चुनें</label>
+
+<select id="toUnit">
+
+    <option value="jarib">जरिब (Jarib)</option>
+
+    <option value="kadi">कड़ी (Kadi)</option>
+
+    <option value="hath">हाथ (Hath)</option>
+
+    <option value="bitta">बित्ता (Bitta)</option>
+
+    <option value="mutthi">मुठ्ठी (Mutthi)</option>
+
+    <option value="inch">इंच (Inch)</option>
+
+    <option value="feet">फुट (Feet)</option>
+
+    <option value="yard">गज (Yard)</option>
+
+    <option value="meter">मीटर (Meter)</option>
+
+</select>
+
+
+<label>मान दर्ज करें</label>
+
+<input
+type="number"
+id="inputValue"
+placeholder="उदाहरण: 1"
+step="any"
+>
+
+
+<button
+class="btn calculate-btn"
+onclick="convertLength()">
+
+🧮 Convert
+
+</button>
+
+
+<button
+class="btn swap-btn"
+onclick="swapUnits()">
+
+🔄 Swap Units
+
+</button>
+
+
+<button
+class="btn print-btn"
+onclick="window.print()">
+
+🖨️ Print Result
+
+</button>
+
+
+<button
+class="btn copy-btn"
+onclick="copyResult()">
+
+📋 Copy Result
+
+</button>
+
+
+<button
+class="btn share-btn"
+onclick="shareWhatsApp()">
+
+📤 WhatsApp Share
+
+</button>
+
+
+<div
+id="lengthResult"
+class="result-card">
+
+परिणाम यहाँ दिखाई देगा
+
+</div>
+
+
+<div class="result">
+
+<div>
+
+<span>जरिब</span>
+
+<span id="jaribResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>कड़ी</span>
+
+<span id="kadiResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>हाथ</span>
+
+<span id="hathResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>बित्ता</span>
+
+<span id="bittaResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>मुठ्ठी</span>
+
+<span id="mutthiResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>इंच</span>
+
+<span id="inchResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>फुट</span>
+
+<span id="feetResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>गज</span>
+
+<span id="yardResult">0</span>
+
+</div>
+
+
+<div>
+
+<span>मीटर</span>
+
+<span id="meterResult">0</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Premium Features -->
+
+<div class="card">
+
+<h2>
+✨ Premium Features
+</h2>
+
+<div class="notice">
+
+<p>
+
+✅ बिहार की पारंपरिक लंबाई इकाइयाँ सपोर्ट<br><br>
+
+✅ आधुनिक लंबाई इकाइयाँ सपोर्ट<br><br>
+
+✅ Instant Conversion<br><br>
+
+✅ Swap सुविधा<br><br>
+
+✅ Copy Result<br><br>
+
+✅ WhatsApp Share<br><br>
+
+✅ Print सुविधा<br><br>
+
+✅ मोबाइल एवं डेस्कटॉप फ्रेंडली
+
+</p>
+
+</div>
+
+</div>
+<!-- Premium Footer -->
+
+<footer class="footer">
+
+<div class="footer-logo">
+📏
+</div>
+
+<h2>eBhulekh Services</h2>
+
+<p class="footer-tagline">
+Traditional & Modern Length Conversion Solutions
+</p>
+
+<div class="footer-info">
+
+<p>📍 Supaul, Bihar</p>
+
+<p>📞 +91 7367910169</p>
+
+<p>✉️ ebhulekhservices@gmail.com</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">
+🏠 Home
+</a>
+
+<a href="amin-calculator.html">
+🏡 Amin Calculator
+</a>
+
+<a href="dynamic-unit-converter.html">
+🔄 Dynamic Converter
+</a>
+
+<a href="https://wa.me/917367910169" target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+© 2026 eBhulekh Services. All Rights Reserved.
+</p>
+
+</footer>
+
+<style>
+
+.footer{
+background:linear-gradient(135deg,#1e40af,#2563eb);
+color:white;
+text-align:center;
+padding:45px 20px 30px;
+margin-top:50px;
+border-top-left-radius:35px;
+border-top-right-radius:35px;
+}
+
+.footer-logo{
+width:75px;
+height:75px;
+margin:auto;
+background:white;
+color:#2563eb;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:38px;
+margin-bottom:15px;
+}
+
+.footer h2{
+margin-bottom:10px;
+}
+
+.footer-tagline{
+margin-bottom:20px;
+opacity:.9;
+}
+
+.footer-info p{
+margin:8px 0;
+}
+
+.footer-links{
+margin:25px 0;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+display:inline-block;
+margin:8px;
+padding:10px 18px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.35);
+}
+
+.footer-links a:hover{
+background:rgba(255,255,255,.15);
+}
+
+.footer hr{
+border:none;
+height:1px;
+background:rgba(255,255,255,.25);
+margin:20px 0;
+}
+
+.copyright{
+font-size:14px;
+opacity:.9;
+}
+
+</style>
+
+<script>
+
+/* Base Unit = Feet */
+
+const factors = {
+
+jarib : 66,
+kadi : 0.66,
+hath : 1.5,
+bitta : 0.75,
+mutthi : 0.5,
+inch : 1/12,
+feet : 1,
+yard : 3,
+meter : 3.28084
+
+};
+
+
+/* Convert */
+
+function convertLength(){
+
+let from =
+document.getElementById("fromUnit").value;
+
+let to =
+document.getElementById("toUnit").value;
+
+let value =
+parseFloat(document.getElementById("inputValue").value);
+
+if(isNaN(value) || value<=0){
+
+document.getElementById("lengthResult").innerHTML =
+"⚠️ कृपया मान दर्ज करें";
+
+return;
+
+}
+
+/* Feet Conversion */
+
+let feet =
+value * factors[from];
+
+let result =
+feet / factors[to];
+
+
+/* All Results */
+
+document.getElementById("jaribResult").innerText =
+(feet/factors.jarib).toFixed(4);
+
+document.getElementById("kadiResult").innerText =
+(feet/factors.kadi).toFixed(4);
+
+document.getElementById("hathResult").innerText =
+(feet/factors.hath).toFixed(4);
+
+document.getElementById("bittaResult").innerText =
+(feet/factors.bitta).toFixed(4);
+
+document.getElementById("mutthiResult").innerText =
+(feet/factors.mutthi).toFixed(4);
+
+document.getElementById("inchResult").innerText =
+(feet/factors.inch).toFixed(4);
+
+document.getElementById("feetResult").innerText =
+feet.toFixed(4);
+
+document.getElementById("yardResult").innerText =
+(feet/factors.yard).toFixed(4);
+
+document.getElementById("meterResult").innerText =
+(feet/factors.meter).toFixed(4);
+
+
+/* Main Result */
+
+document.getElementById("lengthResult").innerHTML =
+
+`📏 <b>${value} ${from}</b><br><br>
+
+= ${result.toFixed(4)} ${to}`;
+
+}
+
+
+/* Swap */
+
+function swapUnits(){
+
+let from =
+document.getElementById("fromUnit");
+
+let to =
+document.getElementById("toUnit");
+
+let temp = from.value;
+
+from.value = to.value;
+
+to.value = temp;
+
+if(document.getElementById("inputValue").value!=""){
+
+convertLength();
+
+}
+
+}
+
+
+/* Copy */
+
+function copyResult(){
+
+let text =
+document.getElementById("lengthResult").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("✅ Result Copy हो गया");
+
+}
+
+
+/* WhatsApp Share */
+
+function shareWhatsApp(){
+
+let result =
+document.getElementById("lengthResult").innerText;
+
+if(result.includes("परिणाम") ||
+result.includes("कृपया")){
+
+alert("⚠️ पहले Convert करें");
+
+return;
+
+}
+
+let message =
+
+`📏 eBhulekh Services
+
+लंबाई रूपांतरण परिणाम:
+
+${result}
+
+🌐 https://shambhubabu-bit.github.io/ebhulekh-services/
+
+धन्यवाद।`;
+
+window.open(
+
+"https://wa.me/?text="+
+encodeURIComponent(message),
+
+"_blank"
+
+);
+
+}
+
+
+/* Enter Support */
+
+document.getElementById("inputValue")
+.addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+convertLength();
+
+}
+
+});
+
+
+/* Auto Convert */
+
+document.getElementById("fromUnit")
+.addEventListener("change",()=>{
+
+if(document.getElementById("inputValue").value!=""){
+
+convertLength();
+
+}
+
+});
+
+document.getElementById("toUnit")
+.addEventListener("change",()=>{
+
+if(document.getElementById("inputValue").value!=""){
+
+convertLength();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

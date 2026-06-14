@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Bhu Land Tool | Kattha Dhur Dhurki Converter
+</title>
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="icon"
+type="image/png"
+href="logo.png">
+
+<link rel="apple-touch-icon"
+href="logo.png">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website">
+
+<meta property="og:title"
+content="Bhu Land Tool | Made by eBhulekh Services">
+
+<meta property="og:description"
+content="कट्ठा, धुर, धुरकी और डिसमिल का प्रीमियम कन्वर्टर। बिहार के सभी लग्गा के लिए।">
+
+<meta property="og:url"
+content="https://shambhubabu-bit.github.io/ebhulekh-services/">
+
+<meta property="og:image"
+content="https://shambhubabu-bit.github.io/ebhulekh-services/logo.png">
+
+<meta property="og:site_name"
+content="eBhulekh Services">
+
+<meta property="og:locale"
+content="hi_IN">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f3f8ff;
+color:#333;
+transition:.3s;
+}
+
+body.dark{
+background:#0f172a;
+color:#fff;
+}
+
+header{
+background:linear-gradient(135deg,#0f766e,#14b8a6);
+padding:35px 20px;
+text-align:center;
+color:white;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.header-logo{
+width:90px;
+height:90px;
+margin:auto;
+border-radius:50%;
+background:white;
+color:#0f766e;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:42px;
+margin-bottom:15px;
+}
+
+header h1{
+font-size:32px;
+margin-bottom:8px;
+}
+
+.header-subtitle{
+opacity:.95;
+}
+
+.header-badge{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:rgba(255,255,255,.2);
+border-radius:25px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+margin-bottom:25px;
+transition:.3s;
+}
+
+.dark .card{
+background:#1e293b;
+}
+
+.card h2{
+text-align:center;
+color:#0f766e;
+margin-bottom:15px;
+}
+
+.dark .card h2{
+color:#5eead4;
+}
+
+.notice{
+background:#fff8e1;
+border-left:6px solid #f59e0b;
+padding:15px;
+border-radius:12px;
+margin-bottom:20px;
+line-height:1.8;
+}
+
+.dark .notice{
+background:#3b2f0b;
+color:#fff;
+}
+
+.notice h3{
+color:#d97706;
+margin-bottom:10px;
+}
+
+input,
+select{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.dark input,
+.dark select{
+background:#334155;
+color:white;
+border-color:#475569;
+}
+
+.btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+margin-top:12px;
+transition:.3s;
+}
+
+.calculate-btn{
+background:#0f766e;
+color:white;
+}
+
+.calculate-btn:hover{
+background:#115e59;
+}
+
+.swap-btn{
+background:#f59e0b;
+color:white;
+}
+
+.swap-btn:hover{
+background:#d97706;
+}
+
+.print-btn{
+background:#2563eb;
+color:white;
+}
+
+.print-btn:hover{
+background:#1d4ed8;
+}
+
+.share-btn{
+background:#25D366;
+color:white;
+}
+
+.copy-btn{
+background:#7c3aed;
+color:white;
+}
+
+.home-btn{
+background:#1e40af;
+color:white;
+}
+
+.dark-btn{
+background:#111827;
+color:white;
+}
+
+.result-card{
+margin-top:20px;
+padding:20px;
+background:#ecfdf5;
+border:3px solid #10b981;
+border-radius:15px;
+text-align:center;
+font-size:20px;
+font-weight:bold;
+line-height:1.8;
+color:#065f46;
+}
+
+.dark .result-card{
+background:#064e3b;
+color:white;
+}
+
+.quick-links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:20px;
+}
+
+.quick-links button{
+padding:12px;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+background:#0f766e;
+color:white;
+}
+
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+z-index:999;
+}
+
+.whatsapp-float i{
+font-size:34px;
+color:white;
+}
+
+.footer{
+margin-top:40px;
+background:linear-gradient(135deg,#0f766e,#14b8a6);
+color:white;
+padding:40px 20px;
+text-align:center;
+border-top-left-radius:30px;
+border-top-right-radius:30px;
+}
+
+.footer h2{
+margin-bottom:10px;
+}
+
+.footer p{
+margin:8px 0;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:25px;
+}
+
+.quick-links{
+grid-template-columns:1fr;
+}
+
+.result-card{
+font-size:18px;
+}
+
+}
+
+@media print{
+
+.whatsapp-float,
+.quick-links,
+.no-print{
+display:none;
+}
+
+body{
+background:white;
+}
+
+.card{
+box-shadow:none;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<a href="https://wa.me/917367910169"
+target="_blank"
+class="whatsapp-float">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<header>
+
+<div class="header-logo">
+🏡
+</div>
+
+<h1>Bhu Land Tool</h1>
+
+<p class="header-subtitle">
+
+कट्ठा • धुर • धुरकी ⇄ डिसमिल कन्वर्टर
+
+</p>
+
+<div class="header-badge">
+
+Made by eBhulekh Services
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>
+
+🏡 Kattha Dhur Dhurki Converter
+
+</h2>
+
+<div class="notice">
+
+<h3>📢 महत्वपूर्ण सूचना</h3>
+
+<p>
+
+यह कन्वर्टर बिहार में प्रचलित विभिन्न लग्गा के अनुसार
+कट्ठा, धुर, धुरकी एवं डिसमिल का परिवर्तन करता है।
+
+</p>
+
+<br>
+
+<ul style="padding-left:20px;line-height:1.8;">
+
+<li>✅ 1 धुर = 20 धुरकी</li>
+
+<li>✅ कट्ठा + धुर + धुरकी → डिसमिल</li>
+
+<li>✅ डिसमिल → कट्ठा + धुर + धुरकी</li>
+
+<li>✅ 4 हाथ से 9 हाथ तक सभी लग्गा सपोर्ट</li>
+
+<li>⚠️ स्थानीय मानकों की पुष्टि अवश्य करें।</li>
+
+</ul>
+
+</div>
+
+
+<button class="btn home-btn no-print"
+onclick="window.location.href='index.html'">
+
+🏠 Home
+
+</button>
+
+
+<button class="btn dark-btn no-print"
+onclick="toggleDarkMode()">
+
+🌙 Dark Mode
+
+</button>
+
+
+<label style="margin-top:20px;display:block;">
+
+कन्वर्ज़न मोड चुनें
+
+</label>
+
+<select id="mode"
+onchange="changeMode()">
+
+<option value="kddToDecimal">
+
+कट्ठा + धुर + धुरकी → डिसमिल
+
+</option>
+
+<option value="decimalToKdd">
+
+डिसमिल → कट्ठा + धुर + धुरकी
+
+</option>
+
+</select>
+
+
+<label>
+
+लग्गा चुनें
+
+</label>
+
+<select id="lagga">
+
+<option value="4">4 हाथ</option>
+
+<option value="4.5">4½ हाथ</option>
+
+<option value="5">5 हाथ</option>
+
+<option value="5.5">5½ हाथ</option>
+
+<option value="6">6 हाथ</option>
+
+<option value="6.5" selected>6½ हाथ</option>
+
+<option value="7">7 हाथ</option>
+
+<option value="7.5">7½ हाथ</option>
+
+<option value="8">8 हाथ</option>
+
+<option value="8.5">8½ हाथ</option>
+
+<option value="9">9 हाथ</option>
+
+</select>
+
+
+
+<div id="kddSection">
+
+<input type="number"
+id="kattha"
+placeholder="कट्ठा">
+
+<input type="number"
+id="dhur"
+placeholder="धुर">
+
+<input type="number"
+id="dhurki"
+placeholder="धुरकी">
+
+</div>
+
+
+<div id="decimalSection"
+style="display:none;">
+
+<input type="number"
+id="decimalInput"
+placeholder="डिसमिल दर्ज करें">
+
+</div>
+
+
+<button class="btn swap-btn"
+onclick="swapMode()">
+
+🔄 Swap
+
+</button>
+
+
+<button class="btn calculate-btn"
+onclick="calculate()">
+
+🧮 Calculate
+
+</button>
+
+
+<button class="btn print-btn"
+onclick="window.print()">
+
+🖨️ Print Result
+
+</button>
+
+
+<button class="btn copy-btn"
+onclick="copyResult()">
+
+📋 Copy Result
+
+</button>
+
+
+<button class="btn share-btn"
+onclick="shareWhatsApp()">
+
+📲 WhatsApp Share
+
+</button>
+
+
+<div class="result-card"
+id="resultBox">
+
+परिणाम यहाँ दिखाई देगा
+
+</div>
+
+</div>
+
+
+
+<div class="card no-print">
+
+<h2>
+
+⚡ Other Tools
+
+</h2>
+
+<div class="quick-links">
+
+<button onclick="window.location.href='index.html'">
+
+🏠 Home
+
+</button>
+
+<button onclick="window.location.href='dynamic-unit-converter.html'">
+
+🔄 Dynamic Converter
+
+</button>
+
+<button onclick="window.location.href='laggi-converter.html'">
+
+📏 Laggi Converter
+
+</button>
+
+<button onclick="window.location.href='index.html'">
+
+🧮 Land Calculator
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<footer class="footer">
+
+<h2>
+
+🏡 Bhu Land Tool
+
+</h2>
+
+<p>
+
+Made by eBhulekh Services
+
+</p>
+
+<p>
+
+📍 Supaul, Bihar
+
+</p>
+
+<p>
+
+📞 +91 7367910169
+
+</p>
+
+<p>
+
+🌐 https://shambhubabu-bit.github.io/ebhulekh-services/
+
+</p>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+
+<script>
+// 1 बीघा = वर्ग गज (पहले वाले Calculator जैसा)
+const laggaData = {
+    "4":1600,
+    "4.5":2025,
+    "5":2500,
+    "5.5":3025,
+    "6":3600,
+    "6.5":4225,
+    "7":4900,
+    "7.5":5625,
+    "8":6400,
+    "8.5":7225,
+    "9":8100
+};
+
+
+// Mode Change
+
+function changeMode(){
+
+let mode =
+document.getElementById("mode").value;
+
+if(mode==="kddToDecimal"){
+
+document.getElementById("kddSection").style.display="block";
+
+document.getElementById("decimalSection").style.display="none";
+
+}else{
+
+document.getElementById("kddSection").style.display="none";
+
+document.getElementById("decimalSection").style.display="block";
+
+}
+
+}
+
+
+// Swap Mode
+
+function swapMode(){
+
+let mode =
+document.getElementById("mode");
+
+if(mode.value==="kddToDecimal"){
+
+mode.value="decimalToKdd";
+
+}else{
+
+mode.value="kddToDecimal";
+
+}
+
+changeMode();
+
+}
+
+
+// Main Calculate Function
+
+function calculate(){
+
+    let lagga = document.getElementById("lagga").value;
+
+    let BIGHA = laggaData[lagga];
+
+    let mode = document.getElementById("mode").value;
+
+    let resultText = "";
+
+    if(mode === "kddToDecimal"){
+
+        let kattha = parseFloat(document.getElementById("kattha").value) || 0;
+
+        let dhur = parseFloat(document.getElementById("dhur").value) || 0;
+
+        let dhurki = parseFloat(document.getElementById("dhurki").value) || 0;
+
+
+        // कुल धुर
+        let totalDhur = (kattha * 20) + dhur + (dhurki / 20);
+
+        // धुर → बीघा
+        let bigha = totalDhur / 400;
+
+        // बीघा → वर्ग गज
+        let sqyd = bigha * BIGHA;
+
+        // वर्ग गज → एकड़
+        let acre = sqyd / 4840;
+
+        // एकड़ → डिसमिल
+        let decimal = acre * 100;
+
+
+        resultText = `
+        🏡 ${lagga} हाथ लग्गा
+
+        <br><br>
+
+        ${kattha} कट्ठा
+        ${dhur} धुर
+        ${dhurki} धुरकी
+
+        <br><br>
+
+        ⬇️
+
+        <br><br>
+
+        <b>
+        ${decimal.toFixed(4)} डिसमिल
+        </b>
+        `;
+
+    }else{
+
+        let decimal = parseFloat(
+            document.getElementById("decimalInput").value
+        );
+
+        if(isNaN(decimal)){
+
+            alert("कृपया डिसमिल दर्ज करें");
+
+            return;
+        }
+
+        // डिसमिल → एकड़
+        let acre = decimal / 100;
+
+        // एकड़ → वर्ग गज
+        let sqyd = acre * 4840;
+
+        // वर्ग गज → बीघा
+        let bigha = sqyd / BIGHA;
+
+        // बीघा → धुर
+        let totalDhur = bigha * 400;
+
+
+        let kattha = Math.floor(totalDhur / 20);
+
+        let remainingDhur = totalDhur % 20;
+
+        let dhur = Math.floor(remainingDhur);
+
+        let dhurki = Math.round((remainingDhur - dhur) * 20);
+
+
+        if(dhurki >= 20){
+
+            dhur++;
+
+            dhurki = 0;
+        }
+
+        if(dhur >= 20){
+
+            kattha++;
+
+            dhur = 0;
+        }
+
+
+        resultText = `
+        🏡 ${lagga} हाथ लग्गा
+
+        <br><br>
+
+        ${decimal} डिसमिल
+
+        <br><br>
+
+        ⬇️
+
+        <br><br>
+
+        <b>
+        ${kattha} कट्ठा
+        ${dhur} धुर
+        ${dhurki} धुरकी
+        </b>
+        `;
+    }
+
+    document.getElementById("resultBox").innerHTML = resultText;
+}
+
+// Copy Result
+
+function copyResult(){
+
+let text =
+document.getElementById("resultBox").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("Result Copy हो गया");
+
+}
+
+
+// WhatsApp Share
+
+function shareWhatsApp(){
+
+let text =
+document.getElementById("resultBox").innerText;
+
+let msg =
+
+"🏡 Bhu Land Tool\n" +
+
+"━━━━━━━━━━━━━━\n\n" +
+
+text +
+
+"\n\n━━━━━━━━━━━━━━\n" +
+
+"🌐 Website:\n" +
+
+"https://shambhubabu-bit.github.io/ebhulekh-services/\n\n" +
+
+"✨ Bhu Land Tool\n" +
+
+"Made by eBhulekh Services\n\n" +
+
+"📞 WhatsApp : +91 7367910169";
+
+
+window.open(
+
+"https://wa.me/?text=" +
+
+encodeURIComponent(msg),
+
+"_blank"
+
+);
+
+}
+
+
+// Dark Mode
+
+function toggleDarkMode(){
+
+document.body.classList.toggle("dark");
+
+}
+
+
+// Enter Key Support
+
+document.addEventListener(
+
+"keypress",
+
+function(e){
+
+if(e.key==="Enter"){
+
+calculate();
+
+}
+
+}
+
+);
+
+
+// Default Load
+
+changeMode();
+// Dark Mode Save
+
+if(localStorage.getItem("bhuDarkMode")==="on"){
+
+document.body.classList.add("dark");
+
+}
+
+
+// Dark Mode Toggle Save
+
+function toggleDarkMode(){
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+
+localStorage.setItem(
+"bhuDarkMode",
+"on"
+);
+
+}else{
+
+localStorage.removeItem(
+"bhuDarkMode"
+);
+
+}
+
+}
+
+
+// Auto Calculate on Input
+
+document.querySelectorAll(
+"input,select"
+).forEach(el=>{
+
+el.addEventListener("change",()=>{
+
+let result=
+document.getElementById("resultBox").innerText;
+
+if(result!=="परिणाम यहाँ दिखाई देगा"){
+
+calculate();
+
+}
+
+});
+
+});
+
+
+// Default Result
+
+document.getElementById("resultBox").innerHTML=
+
+`
+🏡 Bhu Land Tool
+
+<br><br>
+
+कट्ठा • धुर • धुरकी ⇄ डिसमिल
+
+<br><br>
+
+Made by eBhulekh Services
+
+`;
+
+</script>
+
+</body>
+</html>

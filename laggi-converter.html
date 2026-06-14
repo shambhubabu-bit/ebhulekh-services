@@ -124,6 +124,45 @@ background:#16a34a;
 
 .home-btn:hover{
 background:#15803d;
+}.
+
+.quick-links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:20px;
+}
+
+.quick-links button{
+padding:12px;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+background:#0f766e;
+color:white;
+}
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+margin-bottom:25px;
+transition:.3s;
+}
+
+.dark .card{
+background:#1e293b;
+}
+
+.card h2{
+text-align:center;
+color:#0f766e;
+margin-bottom:15px;
+}
+
+.dark .card h2{
+color:#5eead4;
 }
 </style>
 </head>
@@ -158,6 +197,45 @@ onclick="window.location.href='index.html'">
 <button onclick="showData()">Show Conversion</button>
 
 <div class="result" id="result"></div>
+
+</div>
+<div class="card no-print">
+
+<h2>
+
+⚡ Other Tools
+
+</h2>
+
+<div class="quick-links">
+
+<button onclick="window.location.href='index.html'">
+
+🏠 Home
+
+</button>
+
+<button onclick="window.location.href='dynamic-unit-converter.html'">
+
+🔄 Dynamic Converter
+
+</button>
+
+<button onclick="window.location.href='kattha-dhurki-converter.html'">
+
+📏 Kattha Dhur Dhurki Converter
+
+</button>
+
+<button onclick="window.location.href='index.html'">
+
+🧮 Premium Land Calculator
+
+</button>
+
+</div>
+
+</div>
 
 </div>
 

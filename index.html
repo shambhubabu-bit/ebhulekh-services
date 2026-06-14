@@ -435,6 +435,17 @@ class="result-card">
 परिणाम यहाँ दिखाई देगा
 
 </div>
+<div class="bkd-row">
+
+    <span class="bkd-title">
+        🏡 बीघा • कट्ठा • धुर • धुरकी
+    </span>
+
+    <span id="bkdResult">
+        परिणाम यहाँ दिखाई देगा
+    </span>
+
+</div>
 
 <div class="result">
 
@@ -514,30 +525,68 @@ class="result-card">
 
 </div>
 
+<div class="card tool-card" id="kddCard">
+
+    <h2>
+        🏡 कट्ठा • धुर • धुरकी ⇄ डिसमिल Converter
+    </h2>
+
+    
+
+    <div class="tool-info">
+
+        <ul>
+
+            <li>✅ कट्ठा, धुर और धुरकी को डिसमिल में बदलें।</li>
+
+            <li>✅ डिसमिल को कट्ठा, धुर और धुरकी में बदलें।</li>
+
+            <li>✅ 4 हाथ से 9 हाथ तक सभी लग्गा का उपयोग करें।</li>
+
+            <li>✅ 1 धुर = 20 धुरकी के आधार पर गणना करें।</li>
+
+            <li>✅ Swap सुविधा का उपयोग करें।</li>
+
+            <li>✅ Result को WhatsApp पर Share करें।</li>
+
+            <li>✅ Result को Print करें।</li>
+
+        </ul>
+
+    </div>
+
+    <button class="btn share-btn"
+    onclick="window.location.href='kattha-dhurki-converter.html'">
+
+        🏡 कट्ठा • धुरकी Converter खोलें
+
+    </button>
+
+</div>
+
 <!-- Laggi Converter Card -->
 
-<div class="card">
+<div class="card tool-card" id="laggiCard">
 
-<h2>
+<h2>📏 Laggi Converter Premium Tool</h2>
 
-📏 Laggi Converter Premium Tool
 
-</h2>
 
-<p style="
-text-align:center;
-color:#6b7280;
-margin-bottom:20px;
-line-height:1.8;
-">
+<div class="tool-info">
 
-4 हाथ से 9 हाथ तक के लग्गा के अनुसार
-1 धुर, 1 कट्ठा, 1 बीघा और 1 डिसमिल की जानकारी देखें।
+<ul>
+<li>✅ 4 हाथ से 9 हाथ तक सभी लग्गा देखें।</li>
 
-</p>
+<li>✅ 1 धुर, 1 कट्ठा, 1 बीघा की जानकारी प्राप्त करें।</li>
 
-<button
-class="btn print-btn"
+<li>✅ डिसमिल का मान देखें।</li>
+
+<li>✅ Sq Ft, Sq Yard और Sq Meter में जानकारी प्राप्त करें।</li>
+</ul>
+
+</div>
+
+<button class="btn print-btn"
 onclick="window.location.href='laggi-converter.html'">
 
 🔄 Laggi Converter खोलें
@@ -548,28 +597,31 @@ onclick="window.location.href='laggi-converter.html'">
 
 <!-- Dynamic Converter Card -->
 
-<div class="card">
+<div class="card tool-card" id="dynamicCard">
 
-<h2>
+<h2>🔄 Dynamic Unit Converter</h2>
 
-🔄 Dynamic Unit Converter
 
-</h2>
 
-<p style="
-text-align:center;
-color:#6b7280;
-margin-bottom:20px;
-line-height:1.8;
-">
+<div class="tool-info">
 
-धुर, कट्ठा, बीघा और डिसमिल को
-एक-दूसरे में तुरंत बदलें।
+<ul>
 
-</p>
+<li>✅ धुर को कट्ठा, बीघा और डिसमिल में बदलें।</li>
 
-<button
-class="btn calculate-btn"
+<li>✅ कट्ठा को धुर, बीघा और डिसमिल में बदलें।</li>
+
+<li>✅ बीघा को अन्य यूनिट में बदलें।</li>
+
+<li>✅ Swap सुविधा का उपयोग करें।</li>
+
+<li>✅ सभी लग्गा के अनुसार Premium Conversion करें।</li>
+
+</ul>
+
+</div>
+
+<button class="btn calculate-btn"
 onclick="window.location.href='dynamic-unit-converter.html'">
 
 📐 Dynamic Converter खोलें
@@ -764,6 +816,85 @@ max-width:250px;
 }
 
 }
+.tool-info{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(-15px);
+    transition:all .4s ease;
+    background:#f8fafc;
+    border-radius:15px;
+    margin-top:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.tool-card:hover .tool-info{
+    max-height:350px;
+    opacity:1;
+    transform:translateY(0);
+}
+
+.tool-card.active .tool-info{
+    max-height:350px;
+    opacity:1;
+    transform:translateY(0);
+}
+
+.tool-info ul{
+    padding:18px 25px;
+}
+
+.tool-info li{
+    margin:10px 0;
+    line-height:1.6;
+    color:#374151;
+}
+
+.info-toggle{
+    margin-top:15px;
+    background:linear-gradient(135deg,#0bc6f5a7,#0ad906b0);
+    color:#fff;
+}
+.bkd-row{
+margin-top:15px;
+padding:16px;
+border-radius:15px;
+background:linear-gradient(135deg,#fff7ed,#ffedd5);
+border:2px solid #fb923c;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(251,146,60,.15);
+}
+
+.bkd-title{
+color:#c2410c;
+font-size:17px;
+}
+
+#bkdResult{
+color:#7c2d12;
+font-size:18px;
+}
+
+@media(max-width:768px){
+
+.bkd-row{
+text-align:center;
+justify-content:center;
+}
+
+#bkdResult{
+display:block;
+width:100%;
+font-size:16px;
+margin-top:8px;
+}
+
+}
 
 </style>
 <script>
@@ -925,7 +1056,15 @@ function calculate(){
     = ${acre.toFixed(4)} एकड़<br>
 
     = ${formatLand(decimal)}`;
+
+
+    document.getElementById("bkdResult").innerHTML =
+" " + formatLand(decimal);
+
 }
+document.getElementById("bkdResult").innerText =
+"परिणाम यहाँ दिखाई देगा";
+
 
 
 // Result Copy
@@ -1004,6 +1143,17 @@ document.getElementById("unit")
     }
 
 });
+function toggleToolInfo(id){
+
+    if(window.innerWidth <= 768){
+
+        document
+        .getElementById(id)
+        .classList.toggle("active");
+
+    }
+
+}
 
 </script>
 

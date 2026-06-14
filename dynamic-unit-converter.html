@@ -400,20 +400,18 @@ placeholder="उदाहरण: 10"
 </div>
 
 <script>
-    const laggaFactor={
-
-"4":{dhur:1,katha:20,bigha:400,dismil:6.40},
-"4.5":{dhur:1,katha:20,bigha:400,dismil:6.25},
-"5":{dhur:1,katha:20,bigha:400,dismil:6.17},
-"5.5":{dhur:1,katha:20,bigha:400,dismil:6.25},
-"6":{dhur:1,katha:20,bigha:400,dismil:6.94},
-"6.5":{dhur:1,katha:20,bigha:400,dismil:6.58},
-"7":{dhur:1,katha:20,bigha:400,dismil:6.25},
-"7.5":{dhur:1,katha:20,bigha:400,dismil:5.56},
-"8":{dhur:1,katha:20,bigha:400,dismil:6.25},
-"8.5":{dhur:1,katha:20,bigha:400,dismil:6.23},
-"9":{dhur:1,katha:20,bigha:400,dismil:6.50}
-
+const laggaData = {
+    "4":1600,
+    "4.5":2025,
+    "5":2500,
+    "5.5":3025,
+    "6":3600,
+    "6.5":4225,
+    "7":4900,
+    "7.5":5625,
+    "8":6400,
+    "8.5":7225,
+    "9":8100
 };
 
 const unitNames={
@@ -425,47 +423,86 @@ dismil:"डिसमिल"
 
 function convertLand(){
 
-let value=parseFloat(
-document.getElementById("inputValue").value
-);
+    let value = parseFloat(
+        document.getElementById("inputValue").value
+    );
 
-if(isNaN(value)){
-alert("कृपया मान दर्ज करें");
-return;
+    if(isNaN(value) || value<=0){
+        alert("कृपया मान दर्ज करें");
+        return;
+    }
+
+    let lagga = document.getElementById("lagga").value;
+
+    let from = document.getElementById("fromUnit").value;
+
+    let to = document.getElementById("toUnit").value;
+
+    let dhurValue = 0;
+    let BIGHA = laggaData[lagga];
+
+let sqyd = 0;
+
+// पहले वर्ग गज में बदलें
+switch(from){
+
+    case "dhur":
+        sqyd = value * (BIGHA/400);
+        break;
+
+    case "katha":
+        sqyd = value * (BIGHA/20);
+        break;
+
+    case "bigha":
+        sqyd = value * BIGHA;
+        break;
+
+    case "dismil":
+        sqyd = value * 48.4;
+        break;
+}
+ let result = 0;
+
+switch(to){
+
+    case "dhur":
+        result = sqyd / (BIGHA/400);
+        break;
+
+    case "katha":
+        result = sqyd / (BIGHA/20);
+        break;
+
+    case "bigha":
+        result = sqyd / BIGHA;
+        break;
+
+    case "dismil":
+        result = sqyd / 48.4;
+        break;
 }
 
-let lagga=document.getElementById("lagga").value;
-let from=document.getElementById("fromUnit").value;
-let to=document.getElementById("toUnit").value;
+    document.getElementById("convertResult").innerHTML = `
 
-const factor=laggaFactor[lagga];
+    <div class="result-badge">
+        🏡 ${lagga} हाथ लग्गा
+    </div>
 
-let dhurValue=value*factor[from];
+    <div class="result-value">
+        ${value} ${unitNames[from]}
+    </div>
 
-let result=dhurValue/factor[to];
+    <div class="result-arrow">
+        ⬇️
+    </div>
 
-document.getElementById("convertResult").innerHTML=`
+    <div class="result-answer">
+        ${result.toFixed(4)} ${unitNames[to]}
+    </div>
 
-<div class="result-badge">
-🏡 ${lagga} हाथ लग्गा
-</div>
-
-<div class="result-value">
-${value} ${unitNames[from]}
-</div>
-
-<div class="result-arrow">
-⬇️
-</div>
-
-<div class="result-answer">
-${result.toFixed(4)} ${unitNames[to]}
-</div>
-
-`;
-
+    `;
 }
-
 function swapUnits(){
 
 let from=document.getElementById("fromUnit");
